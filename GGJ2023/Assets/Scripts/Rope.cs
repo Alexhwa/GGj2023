@@ -5,13 +5,20 @@ using UnityEngine;
 
 public class Rope : MonoBehaviour
 {
+    [SerializeField] private GameObject anchor;
     [SerializeField] [Tooltip("Collider marked as trigger")] private Collider selectionBox;
+    [SerializeField] private LineRenderer lineRenderer;
     
+
     public enum STATE{Set,Unset}
 
     public STATE currentState;
-
+    
+    
     private GameColor.COLOR _color;
+    private Vector3 rootPoint;
+    private Vector3 anchorPoint;
+    
     public GameColor.COLOR CurrentColor
     {
         get => _color;
@@ -45,6 +52,8 @@ public class Rope : MonoBehaviour
 
     private void Update()
     {
+        rootPoint = Player.Instance.transform.position;
+        anchorPoint = anchor.transform.position;
         switch (currentState)
         {
             case STATE.Set:
@@ -54,5 +63,7 @@ public class Rope : MonoBehaviour
                 //TODO: Follow mouse
                 break;
         }
+        lineRenderer.SetPosition(0,rootPoint);
+        lineRenderer.SetPosition(1,anchorPoint);
     }
 }

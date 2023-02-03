@@ -130,6 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1618303839}
     m_Modifications:
+    - target: {fileID: 2114665761464218451, guid: d9de46df72eef4648ae47860923c8718, type: 3}
+      propertyPath: m_UseLimits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3112521667315816225, guid: d9de46df72eef4648ae47860923c8718, type: 3}
       propertyPath: m_ConnectedBody
       value: 
@@ -1121,6 +1125,40 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1665843319}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &1761306276 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 5247766388573758792, guid: d9de46df72eef4648ae47860923c8718, type: 3}
+  m_PrefabInstance: {fileID: 4915093982287622539}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1811181022 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1811181022, guid: d9de46df72eef4648ae47860923c8718, type: 3}
+  m_PrefabInstance: {fileID: 4915093982287622539}
+  m_PrefabAsset: {fileID: 0}
+--- !u!145 &1811181029
+SpringJoint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1811181022}
+  m_ConnectedBody: {fileID: 1761306276}
+  m_ConnectedArticulationBody: {fileID: 0}
+  m_Anchor: {x: 0, y: 0.5, z: 0}
+  m_AutoConfigureConnectedAnchor: 1
+  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
+  serializedVersion: 2
+  m_Spring: 1000
+  m_Damper: 0.2
+  m_MinDistance: 0
+  m_MaxDistance: 1.31
+  m_Tolerance: 0.025
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 1
+  m_MassScale: 1
+  m_ConnectedMassScale: 1
 --- !u!1001 &4915093982287622539
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1180,7 +1218,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1811181029, guid: d9de46df72eef4648ae47860923c8718, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d9de46df72eef4648ae47860923c8718, type: 3}
 --- !u!4 &8777969531491919552 stripped
 Transform:

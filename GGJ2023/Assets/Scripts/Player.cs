@@ -7,7 +7,7 @@ using Random = UnityEngine.Random;
 public class Player : MonoBehaviour
 {
     private static Player _instance;
-    public static Player Instance = _instance ? _instance : _instance = FindObjectOfType<Player>();
+    public static Player Instance => _instance ? _instance : _instance = FindObjectOfType<Player>();
     [SerializeField] private Collider hitbox;
 
     private List<Rope> _ropes;

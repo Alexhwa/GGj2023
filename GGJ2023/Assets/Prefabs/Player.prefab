@@ -222,7 +222,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2025500048815507718}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9c9e03d2a1125184abbbee4b56699874, type: 3}
   m_Name: 
@@ -287,6 +287,18 @@ PrefabInstance:
       propertyPath: m_ConnectedAnchor.y
       value: 4.29
       objectReference: {fileID: 0}
+    - target: {fileID: 2492714205996593661, guid: d125dd06c74fffb4594407866b978670, type: 3}
+      propertyPath: m_ConnectedBody
+      value: 
+      objectReference: {fileID: 2025500048815507715}
+    - target: {fileID: 2492714205996593661, guid: d125dd06c74fffb4594407866b978670, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2492714205996593661, guid: d125dd06c74fffb4594407866b978670, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4200365698261829299, guid: d125dd06c74fffb4594407866b978670, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -339,6 +351,18 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7566175679009864351, guid: d125dd06c74fffb4594407866b978670, type: 3}
+      propertyPath: m_ConnectedBody
+      value: 
+      objectReference: {fileID: 2025500048815507715}
+    - target: {fileID: 7566175679009864351, guid: d125dd06c74fffb4594407866b978670, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7566175679009864351, guid: d125dd06c74fffb4594407866b978670, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d125dd06c74fffb4594407866b978670, type: 3}
 --- !u!4 &2762597496514526592 stripped
@@ -358,12 +382,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2762597496514526606}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fb1d6fe05fbf6e54196472282e44bf17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  body: {fileID: 0}
 --- !u!1001 &2025500050219539530
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -378,6 +403,14 @@ PrefabInstance:
     - target: {fileID: -6738474681107172525, guid: d125dd06c74fffb4594407866b978670, type: 3}
       propertyPath: m_ConnectedAnchor.y
       value: 4.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 2492714205996593661, guid: d125dd06c74fffb4594407866b978670, type: 3}
+      propertyPath: m_ConnectedBody
+      value: 
+      objectReference: {fileID: 2025500048815507715}
+    - target: {fileID: 2492714205996593661, guid: d125dd06c74fffb4594407866b978670, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4200365698261829299, guid: d125dd06c74fffb4594407866b978670, type: 3}
       propertyPath: m_RootOrder
@@ -431,6 +464,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7566175679009864351, guid: d125dd06c74fffb4594407866b978670, type: 3}
+      propertyPath: m_ConnectedBody
+      value: 
+      objectReference: {fileID: 2025500048815507715}
+    - target: {fileID: 7566175679009864351, guid: d125dd06c74fffb4594407866b978670, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d125dd06c74fffb4594407866b978670, type: 3}
 --- !u!1 &2762597497275603703 stripped
@@ -445,12 +486,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2762597497275603703}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fb1d6fe05fbf6e54196472282e44bf17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 0
+  body: {fileID: 0}
 --- !u!4 &2762597497275603705 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4200365698261829299, guid: d125dd06c74fffb4594407866b978670, type: 3}

@@ -42,18 +42,8 @@ public class BodyPhysics : MonoBehaviour
             }
             targetPosition = averagePosition / arms.Count;
         }
-        /*else if(arms.Count == 1)
-        {
-            targetPosition = arms[0].transform.position + Vector3.down;
-        }*/
 
         Vector3 moveForce = (targetPosition - transform.position) * moveIntensity;
-        /*if (arms.Count == 1)
-        {
-            Vector3 perpMotionVector = Vector3.Cross((targetPosition - transform.position), Vector3.forward);
-            moveForce = (perpMotionVector + (targetPosition - transform.position)) * moveIntensity;
-            if (targetPosition.x < transform.position.x) moveForce *= -1;
-        }*/
 
         if (Vector3.Distance(targetPosition, transform.position) > minDistToStop)
         {

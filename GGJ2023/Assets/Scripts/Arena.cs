@@ -36,12 +36,4 @@ public class Arena : MonoBehaviour
         }
         //TODO: End Game
     }
-
-    public void ChangeWallPlacement(bool enabled)
-    {
-        foreach (var w in walls)
-        {
-            w.clickArea.enabled = enabled;
-        }
-    }
 }

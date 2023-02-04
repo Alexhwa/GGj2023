@@ -37,6 +37,7 @@ public class ArmRope : MonoBehaviour
     {
         m_rb = GetComponent<Rigidbody>();
         lineRenderer.material = new Material(lineRenderer.material);
+        currentState = STATE.Set;
     }
     public ArmRope InitRope(GameObject wallObject, int ropeNumber, int totalRopes)
     {

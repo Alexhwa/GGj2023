@@ -8,11 +8,7 @@ public class Wall : MonoBehaviour
 {
     [SerializeField][Tooltip("Indexed at 0. Starts at the top wall, increases clockwise. Starts at top-left wall if top is a point instead of an edge.")] 
     private int wallNumber;
-    
-    public Collider clickArea;
     [SerializeField] public GameColor.COLOR color;
-    
-
 
     [SerializeField] private MeshRenderer meshRenderer;
     //private List<ArmRope> _connectedRopes = new List<ArmRope>();
@@ -34,8 +30,6 @@ public class Wall : MonoBehaviour
             //ArmRope armRope = Instantiate(ropeObject).GetComponent<ArmRope>();
             //_connectedRopes.Add(armRope.InitRope(gameObject, i, ropes));
         }
-
-        clickArea.enabled = false;
     }
     
     public void OnMouseDown()

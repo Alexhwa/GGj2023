@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
 
     public void AddArm(Vector3 position)
     {
-        var arm = Instantiate(armObject,transform).transform.GetChild(0);
+        var arm = Instantiate(armObject,transform.parent).transform.GetChild(0);
         arm.position = position;
         bodyPhysics.AttachArm(arm.GetComponent<ArmRope>());
     }

@@ -38,7 +38,11 @@ public class Enemy : MonoBehaviour
     {
         transform.position =
             Vector3.Lerp(_attachedArmRope.anchorPoint, _attachedArmRope.rootPoint, _percentTraveled / 100);
-        
-        _percentTraveled += speed * Time.deltaTime;
+        if (_percentTraveled >= 100)
+        {
+            GameController.Instance.player.OnEnemyContact();
+            Kill();
+        }
+        _percentTraveled = Math.Min( _percentTraveled + speed * Time.deltaTime, 100);
     }
 }

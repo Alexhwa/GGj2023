@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -9,14 +10,15 @@ public class GameController : MonoBehaviour
     private static GameController _instance;
     public static GameController Instance => _instance ? _instance : _instance = FindObjectOfType<GameController>();
 
+    [SerializeField] private DOTweenAnimation startAnimation;
     [SerializeField] private GameObject playerObject;
     [SerializeField] private GameObject fourSidedWalls;
 
-    public Player player;
-    public Arena CurrentArena;
+    [HideInInspector] public Player player;
+    [HideInInspector] public Arena CurrentArena;
     public HashSet<GameColor.COLOR> CurrentColors = new HashSet<GameColor.COLOR>();
     
-    public void StartGame(GameLevel level)
+    public void SetUpGame(GameLevel level)
     {
         switch (level.walls.Count)
         {
@@ -33,7 +35,14 @@ public class GameController : MonoBehaviour
         player = Instantiate(playerObject, Vector3.zero, Quaternion.identity).GetComponentInChildren<Player>();
         CurrentArena = FindObjectOfType<Arena>();
         CurrentArena.InitArena(level);
-        
+        StartCoroutine(StartGame(level));
+    }
+
+    public IEnumerator StartGame(GameLevel level)
+    {
+        startAnimation.transform.parent.gameObject.SetActive(true);
+        yield return new WaitForSeconds(3);
+        CurrentArena.StartGameRounds(level.rounds);
     }
 
     public void ClearField()

@@ -3,7 +3,17 @@ guid: c1e8ac54f73eee943855f7a9757f2e77
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BotBody_MAT
+    second: {fileID: 2100000, guid: 32ef3df5ae422b74e938a6c4359a7d5e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BotFace_MAT
+    second: {fileID: 2100000, guid: 62777c609398d3e46a7d7ce4b8856132, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

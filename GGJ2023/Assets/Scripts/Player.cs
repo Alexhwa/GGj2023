@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -8,11 +9,10 @@ public class Player : MonoBehaviour
 {
     private static Player _instance;
     public static Player Instance => _instance ? _instance : _instance = FindObjectOfType<Player>();
+    [SerializeField] private GameObject armObject;
     [SerializeField] private Collider hitbox;
 
-    private BodyPhysics bodyPhysics;
-
-    private List<ArmRope> _ropes;
+    [SerializeField] private BodyPhysics bodyPhysics;
 
     [Header("Selection")]
     private Ray _ray;
@@ -21,12 +21,12 @@ public class Player : MonoBehaviour
     private ArmRope _grabbedArm;
 
     public float grabbedArmFollowDistance;
-    
-    private void Start()
+
+    public void AddArm(Vector3 position)
     {
-        //For Debug:
-        _ropes = new List<ArmRope>(FindObjectsOfType<ArmRope>());
-        bodyPhysics = GetComponent<BodyPhysics>();
+        var arm = Instantiate(armObject,transform).transform.GetChild(0);
+        arm.position = position;
+        bodyPhysics.AttachArm(arm.GetComponent<ArmRope>());
     }
 
     private void Update()
@@ -70,7 +70,7 @@ public class Player : MonoBehaviour
     }
     public ArmRope GetRandomRope()
     {
-        List<ArmRope> ropes_cpy = new List<ArmRope>(_ropes);
+        List<ArmRope> ropes_cpy = new List<ArmRope>(bodyPhysics.arms);
         ArmRope armRope = null;
         while (ropes_cpy.Count > 0)
         {

@@ -65,6 +65,10 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void OnEnemyContact()
+    {
+        //TODO:Damage Animation
+    }
     private void OnCollisionEnter(Collision other)
     {
         //TODO: Handle death when touching wall

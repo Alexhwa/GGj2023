@@ -16,10 +16,13 @@ public class Arena : MonoBehaviour
             if (level.walls[i].color != GameColor.COLOR.None)
                 GameController.Instance.CurrentColors.Add(level.walls[i].color);
         }
-
-        StartCoroutine(HandleGameRounds(level.rounds));
     }
-    
+
+    public void StartGameRounds(List<GameLevel.Round> rounds)
+    {
+        StartCoroutine(HandleGameRounds(rounds));
+
+    }
     private IEnumerator HandleGameRounds(List<GameLevel.Round> rounds)
     {
         foreach (var round in rounds)

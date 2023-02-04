@@ -12,15 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14686968c0d17e74d8b4b245606af903, type: 3}
   m_Name: TestLevel
   m_EditorClassIdentifier: 
+  armCount: 0
   walls:
   - color: 0
-    startingArms: 0
+    startingArms: 1
   - color: 1
-    startingArms: 0
+    startingArms: 1
   - color: 2
-    startingArms: 0
+    startingArms: 1
   - color: 3
-    startingArms: 0
+    startingArms: 1
   rounds:
   - enemies: 5
     time: 5

@@ -14,7 +14,6 @@ public class DebugScript : MonoBehaviour
 
     public void StartGameDebug()
     {
-        GameController.Instance.CurrentArena = FindObjectOfType<Arena>();
-        GameController.Instance.CurrentArena.InitArena(level);
+        GameController.Instance.StartGame(level);
     }
 }

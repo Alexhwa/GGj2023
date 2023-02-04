@@ -40,6 +40,7 @@ public class Player : MonoBehaviour
                 if (armScript.currentState == ArmRope.STATE.Set) {
                     _grabbedArm = armScript;
                     bodyPhysics.DetachArm(_grabbedArm);
+                    _grabbedArm.CurrentColor = GameColor.COLOR.None;
                 }
                 return;
             }

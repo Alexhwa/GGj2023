@@ -8,6 +8,7 @@ public class GameController : MonoBehaviour
     private static GameController _instance;
     public static GameController Instance => _instance ? _instance : _instance = FindObjectOfType<GameController>();
 
+    [SerializeField] private GameObject playerObject;
     [SerializeField] private GameObject fourSidedWalls;
 
     public Arena CurrentArena;
@@ -18,7 +19,7 @@ public class GameController : MonoBehaviour
         switch (level.walls.Count)
         {
             case 4:
-                //TODO: Spawn fourSidedWalls Object
+                Instantiate(fourSidedWalls, Vector3.zero, Quaternion.identity);
                 break;
             
         
@@ -27,8 +28,10 @@ public class GameController : MonoBehaviour
                 throw new Exception("GameController.cs: Invalid walls in Game Level: " + level.name);
                 break;
         }
+        Instantiate(playerObject, Vector3.zero, Quaternion.identity);
         CurrentArena = FindObjectOfType<Arena>();
         CurrentArena.InitArena(level);
+        
     }
 
 

@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
 {
     public GameColor.COLOR color = GameColor.COLOR.None;
 
+    [SerializeField] private MeshRenderer meshRenderer;
     [SerializeField][Tooltip("percent traveled/s")] private float speed;
     
     [Range(0,100)]private float _percentTraveled;
@@ -15,7 +16,9 @@ public class Enemy : MonoBehaviour
     private void Start()
     {
         _attachedArmRope = Player.Instance.GetRandomRope();
-        //color = GameColor.RandomColorExcluding(color);
+        meshRenderer.material = new Material(meshRenderer.material);
+        color = GameColor.RandomColorExcluding(color);
+        meshRenderer.material.color = GameColor.GetColor(color);
         _attachedArmRope.WallLinkListener += TryKill;
     }
 

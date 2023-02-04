@@ -6,6 +6,8 @@ using UnityEngine;
 [Serializable][CreateAssetMenu]
 public class GameLevel : ScriptableObject
 {
+    public int armCount;
+    
     [Serializable]
     public struct Wall
     {

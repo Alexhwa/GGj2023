@@ -10,7 +10,7 @@ public class Wall : MonoBehaviour
     private int wallNumber;
     
     public Collider clickArea;
-    [SerializeField] private GameColor.COLOR color;
+    [SerializeField] public GameColor.COLOR color;
     
 
     [SerializeField] private GameObject ropeObject;

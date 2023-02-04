@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ArmRope : MonoBehaviour
@@ -27,13 +28,16 @@ public class ArmRope : MonoBehaviour
         set
         {
             _color = value;
-            //TODO: set the visual line color;
+            lineRenderer.material.color = GameColor.GetColor(value);
         }
     }
 
-    public event Action<GameColor.COLOR> WallLinkListener; 
-    
-
+    public event Action<GameColor.COLOR> WallLinkListener;
+    private void Start()
+    {
+        m_rb = GetComponent<Rigidbody>();
+        lineRenderer.material = new Material(lineRenderer.material);
+    }
     public ArmRope InitRope(GameObject wallObject, int ropeNumber, int totalRopes)
     {
         //TODO: link start of rope with Player;
@@ -48,11 +52,13 @@ public class ArmRope : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(currentState == STATE.Unset)
+        
+        if (currentState == STATE.Unset)
         {
             currentState = STATE.Set;
             m_rb.velocity = Vector3.zero;
             m_rb.isKinematic = true;
+            PlaceRope(collision.gameObject.GetComponent<Wall>().color);
         }
     }
 
@@ -61,11 +67,7 @@ public class ArmRope : MonoBehaviour
         CurrentColor = color;
         WallLinkListener?.Invoke(color);
     }
-
-    private void Start()
-    {
-        m_rb = GetComponent<Rigidbody>();
-    }
+    
 
     private void FixedUpdate()
     {

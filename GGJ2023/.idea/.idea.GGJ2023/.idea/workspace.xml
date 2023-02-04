@@ -29,18 +29,30 @@
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Scripts/Rope.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GameColor.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GameLevel.cs" />
-      <option value="$PROJECT_DIR$/Assets/DebugScript.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/GameController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/BodyPhysics.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Arena.cs" />
+      <option value="$PROJECT_DIR$/Assets/DebugScript.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Wall.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ArmRope.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Arena.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GameController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" />
     </changedPaths>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="RunManager">
+    <configuration name="Attach to Unity Playmode" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="23144">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" value="23144" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+  </component>
   <component name="TaskManager">
     <servers />
   </component>

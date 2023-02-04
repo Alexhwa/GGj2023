@@ -15,7 +15,7 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
-        _attachedArmRope = Player.Instance.GetRandomRope();
+        _attachedArmRope = GameController.Instance.player.GetRandomRope();
         meshRenderer.material = new Material(meshRenderer.material);
         color = GameColor.RandomColorExcluding(color);
         meshRenderer.material.color = GameColor.GetColor(color);
@@ -38,7 +38,11 @@ public class Enemy : MonoBehaviour
     {
         transform.position =
             Vector3.Lerp(_attachedArmRope.anchorPoint, _attachedArmRope.rootPoint, _percentTraveled / 100);
-        
-        _percentTraveled += speed * Time.deltaTime;
+        if (_percentTraveled >= 100)
+        {
+            GameController.Instance.player.OnEnemyContact();
+            Kill();
+        }
+        _percentTraveled = Math.Min( _percentTraveled + speed * Time.deltaTime, 100);
     }
 }

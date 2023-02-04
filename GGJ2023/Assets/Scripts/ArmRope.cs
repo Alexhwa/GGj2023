@@ -8,9 +8,9 @@ public class ArmRope : MonoBehaviour
 {
     [SerializeField] private GameObject anchor;
     [SerializeField] [Tooltip("Collider marked as trigger")] private Collider selectionBox;
-    [SerializeField] private LineRenderer lineRenderer;
+    //[SerializeField] private LineRenderer lineRenderer;
 
-    private Rigidbody m_rb;
+    [SerializeField]private Rigidbody m_rb;
     public float moveSpeed;
 
     public enum STATE{Set,Unset}
@@ -28,16 +28,14 @@ public class ArmRope : MonoBehaviour
         set
         {
             _color = value;
-            lineRenderer.material.color = GameColor.GetColor(value);
+            //lineRenderer.material.color = GameColor.GetColor(value);
         }
     }
 
     public event Action<GameColor.COLOR> WallLinkListener;
     private void Start()
     {
-        m_rb = GetComponent<Rigidbody>();
-        lineRenderer.material = new Material(lineRenderer.material);
-        currentState = STATE.Set;
+        //lineRenderer.material = new Material(lineRenderer.material);
     }
     public ArmRope InitRope(GameObject wallObject, int ropeNumber, int totalRopes)
     {
@@ -72,7 +70,7 @@ public class ArmRope : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rootPoint = Player.Instance.transform.position;
+        rootPoint = GameController.Instance.player.transform.position;
         anchorPoint = anchor.transform.position;
         switch (currentState)
         {
@@ -82,8 +80,8 @@ public class ArmRope : MonoBehaviour
             case STATE.Unset:
                 break;
         }
-        lineRenderer.SetPosition(0,rootPoint);
-        lineRenderer.SetPosition(1,anchorPoint);
+        //lineRenderer.SetPosition(0,rootPoint);
+        //lineRenderer.SetPosition(1,anchorPoint);
     }
 
     public void Launch(Vector3 direction)

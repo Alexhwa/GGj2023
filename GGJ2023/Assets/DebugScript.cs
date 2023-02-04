@@ -14,6 +14,7 @@ public class DebugScript : MonoBehaviour
 
     public void StartGameDebug()
     {
-        GameController.Instance.StartGame(level);
+        GameController.Instance.ClearField();
+        GameController.Instance.SetUpGame(level);
     }
 }

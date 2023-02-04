@@ -25,8 +25,7 @@ public class Wall : MonoBehaviour
         meshRenderer.material.color = GameColor.GetColor(color);
         for (int i = 0; i < ropes; i++)
         {
-            
-            Player.Instance.AddArm(transform.position);
+            GameController.Instance.player.AddArm(transform.position);
             //ArmRope armRope = Instantiate(ropeObject).GetComponent<ArmRope>();
             //_connectedRopes.Add(armRope.InitRope(gameObject, i, ropes));
         }

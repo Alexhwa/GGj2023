@@ -238,6 +238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2235e74bc37b41e42b7ccbca37244220, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startAnimation: {fileID: 0}
   playerObject: {fileID: 417405918}
   fourSidedWalls: {fileID: 441494539}
   player: {fileID: 1291213591}

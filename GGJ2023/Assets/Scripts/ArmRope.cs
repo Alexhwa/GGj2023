@@ -45,14 +45,13 @@ public class ArmRope : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        currentState = STATE.Set;
         _color = GameColor.COLOR.None;
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         
-        if (currentState == STATE.Unset)
+        if (currentState == STATE.Unset && collision.gameObject.tag.Equals("Wall"))
         {
             currentState = STATE.Set;
             m_rb.velocity = Vector3.zero;
@@ -89,5 +88,13 @@ public class ArmRope : MonoBehaviour
         m_rb.isKinematic = false;
         m_rb.velocity = direction * moveSpeed;
         currentState = STATE.Unset;
+    }
+    public bool CanBeGrabbed()
+    {
+        return currentState == STATE.Set;
+    }
+    public void SetCanBeGrabbed(bool value)
+    {
+        currentState = (value) ? STATE.Set : STATE.Unset;
     }
 }

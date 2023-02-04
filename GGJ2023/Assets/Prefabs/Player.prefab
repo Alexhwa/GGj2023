@@ -9,12 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2025500048815507714}
-  - component: {fileID: 1115290725918332003}
   - component: {fileID: 2025500048815507716}
   - component: {fileID: 2025500048815507719}
   - component: {fileID: 2025500048815507715}
   - component: {fileID: 2025500048815507712}
   - component: {fileID: 987519523}
+  - component: {fileID: 1138532101199844457}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -38,25 +38,6 @@ Transform:
   m_Father: {fileID: 2025500049101501929}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1115290725918332003
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2025500048815507718}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16011fbaa33bc5845b4a46fe142046c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  armObject: {fileID: 6326150282498019874, guid: d9de46df72eef4648ae47860923c8718, type: 3}
-  hitbox: {fileID: 2025500048815507719}
-  bodyPhysics: {fileID: 987519523}
-  raycastLayers:
-    serializedVersion: 2
-    m_Bits: 8
-  grabbedArmFollowDistance: 2
 --- !u!23 &2025500048815507716
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -244,6 +225,25 @@ MonoBehaviour:
   minDistToStop: 0.25
   gravity: 2
   arms: []
+--- !u!114 &1138532101199844457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2025500048815507718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16011fbaa33bc5845b4a46fe142046c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  armObject: {fileID: 6326150282498019874, guid: d9de46df72eef4648ae47860923c8718, type: 3}
+  hitbox: {fileID: 2025500048815507719}
+  bodyPhysics: {fileID: 987519523}
+  raycastLayers:
+    serializedVersion: 2
+    m_Bits: 8
+  grabbedArmFollowDistance: 2
 --- !u!1 &2025500049101501928
 GameObject:
   m_ObjectHideFlags: 0
@@ -317,7 +317,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2184869288349307245, guid: 5435d7bef6ee1754abfad99808e6909c, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2184869288349307245, guid: 5435d7bef6ee1754abfad99808e6909c, type: 3}
       propertyPath: m_LocalRotation.x
@@ -325,7 +325,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2184869288349307245, guid: 5435d7bef6ee1754abfad99808e6909c, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2184869288349307245, guid: 5435d7bef6ee1754abfad99808e6909c, type: 3}
       propertyPath: m_LocalRotation.z
@@ -337,7 +337,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2184869288349307245, guid: 5435d7bef6ee1754abfad99808e6909c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2184869288349307245, guid: 5435d7bef6ee1754abfad99808e6909c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z

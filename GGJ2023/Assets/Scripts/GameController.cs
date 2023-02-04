@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameController : MonoBehaviour
@@ -11,6 +12,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private GameObject playerObject;
     [SerializeField] private GameObject fourSidedWalls;
 
+    public Player player;
     public Arena CurrentArena;
     public HashSet<GameColor.COLOR> CurrentColors = new HashSet<GameColor.COLOR>();
     
@@ -28,12 +30,18 @@ public class GameController : MonoBehaviour
                 throw new Exception("GameController.cs: Invalid walls in Game Level: " + level.name);
                 break;
         }
-        Instantiate(playerObject, Vector3.zero, Quaternion.identity);
+        player = Instantiate(playerObject, Vector3.zero, Quaternion.identity).GetComponentInChildren<Player>();
         CurrentArena = FindObjectOfType<Arena>();
         CurrentArena.InitArena(level);
         
     }
 
+    public void ClearField()
+    {
+        if(CurrentArena != null) Destroy(CurrentArena.gameObject);
+        if(player != null) Destroy(player.transform.parent.gameObject);
+        CurrentColors.Clear();
+    }
 
     
 }

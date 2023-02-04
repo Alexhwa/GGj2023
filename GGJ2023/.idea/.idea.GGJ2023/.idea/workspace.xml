@@ -27,17 +27,17 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/Scripts/GameLevel.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Wall.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Arena.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Rope.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/BodyPhysics.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ArmRope.cs" />
-      <option value="$PROJECT_DIR$/Assets/DebugScript.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/GameColor.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/GameController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GameColor.cs" />
+      <option value="$PROJECT_DIR$/Assets/DebugScript.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Wall.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GameLevel.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GameController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Arena.cs" />
     </changedPaths>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />

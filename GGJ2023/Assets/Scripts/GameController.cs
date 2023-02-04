@@ -30,4 +30,7 @@ public class GameController : MonoBehaviour
         CurrentArena = FindObjectOfType<Arena>();
         CurrentArena.InitArena(level);
     }
+
+
+    
 }

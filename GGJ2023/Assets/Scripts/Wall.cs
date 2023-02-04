@@ -14,12 +14,19 @@ public class Wall : MonoBehaviour
     
 
     [SerializeField] private GameObject ropeObject;
+    [SerializeField] private MeshRenderer meshRenderer;
     private List<ArmRope> _connectedRopes = new List<ArmRope>();
+
+    private void Awake()
+    {
+        
+    }
 
     public void InitWall(GameColor.COLOR startColor, int ropes)
     {
         color = startColor;
-        //TODO: Recolor wall
+        meshRenderer.material = new Material(meshRenderer.material);
+        meshRenderer.material.color = GameColor.GetColor(color);
         for (int i = 0; i < ropes; i++)
         {
             ArmRope armRope = Instantiate(ropeObject).GetComponent<ArmRope>();

@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Rope : MonoBehaviour
+public class ArmRope : MonoBehaviour
 {
     [SerializeField] private GameObject anchor;
     [SerializeField] [Tooltip("Collider marked as trigger")] private Collider selectionBox;
@@ -32,7 +32,7 @@ public class Rope : MonoBehaviour
     public event Action<GameColor.COLOR> WallLinkListener; 
     
 
-    public Rope InitRope(GameObject wallObject, int ropeNumber, int totalRopes)
+    public ArmRope InitRope(GameObject wallObject, int ropeNumber, int totalRopes)
     {
         //TODO: link start of rope with Player;
         //TODO: Do some logic using 2 given ints to evenly space the ropes on the wall;

@@ -17,7 +17,7 @@ public class BodyPhysics : MonoBehaviour
 
 
 
-    public Arm[] arms;
+    public ArmRope[] arms;
 
     private Vector3 targetPosition;
     private Rigidbody m_rb;
@@ -26,7 +26,7 @@ public class BodyPhysics : MonoBehaviour
     private Ray _ray;
     private RaycastHit _hit;
     public LayerMask raycastLayers;
-    private Arm _grabbedArm;
+    private ArmRope _grabbedArm;
 
     // Start is called before the first frame update
     void Start()
@@ -42,7 +42,7 @@ public class BodyPhysics : MonoBehaviour
         if(arms.Length > 0)
         {
             Vector3 averagePosition = new Vector3();
-            foreach(Arm a in arms)
+            foreach(ArmRope a in arms)
             {
                 averagePosition += a.transform.position + Vector3.down * gravity / arms.Length / 2;
             }
@@ -75,7 +75,7 @@ public class BodyPhysics : MonoBehaviour
             _ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(_ray, out _hit, 100, raycastLayers))
             {
-                _grabbedArm = _hit.collider.GetComponent<Arm>();
+                _grabbedArm = _hit.collider.GetComponent<ArmRope>();
             }
         }
         else if (Input.GetMouseButtonDown(0) && _grabbedArm != null)

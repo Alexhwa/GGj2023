@@ -10,26 +10,26 @@ public class Player : MonoBehaviour
     public static Player Instance => _instance ? _instance : _instance = FindObjectOfType<Player>();
     [SerializeField] private Collider hitbox;
 
-    private List<Rope> _ropes;
+    private List<ArmRope> _ropes;
 
-    public Rope GetRandomRope()
+    public ArmRope GetRandomRope()
     {
-        List<Rope> ropes_cpy = new List<Rope>(_ropes);
-        Rope rope = null;
+        List<ArmRope> ropes_cpy = new List<ArmRope>(_ropes);
+        ArmRope armRope = null;
         while (ropes_cpy.Count > 0)
         {
-            rope = ropes_cpy[Random.Range(0, ropes_cpy.Count)];
-            if (rope.currentState != Rope.STATE.Unset) break;
-            ropes_cpy.Remove(rope);
+            armRope = ropes_cpy[Random.Range(0, ropes_cpy.Count)];
+            if (armRope.currentState != ArmRope.STATE.Unset) break;
+            ropes_cpy.Remove(armRope);
         }
-        if (rope == null) throw new NullReferenceException();
-        return rope;
+        if (armRope == null) throw new NullReferenceException();
+        return armRope;
     }
     
     private void Start()
     {
         //For Debug:
-        _ropes = new List<Rope>(FindObjectsOfType<Rope>());
+        _ropes = new List<ArmRope>(FindObjectsOfType<ArmRope>());
     }
 
     private void OnCollisionEnter(Collision other)

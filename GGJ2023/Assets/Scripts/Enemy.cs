@@ -10,15 +10,15 @@ public class Enemy : MonoBehaviour
     [SerializeField][Tooltip("percent traveled/s")] private float speed;
     
     [Range(0,100)]private float _percentTraveled;
-    private Rope _attachedRope;
+    private ArmRope _attachedArmRope;
 
     private void Start()
     {
-        _attachedRope = Player.Instance.GetRandomRope();
+        _attachedArmRope = Player.Instance.GetRandomRope();
         color = GameColor.RandomColorExcluding(color);
         //TODO Set enemy color
         //TODO: attach to the rope object
-        _attachedRope.WallLinkListener += TryKill;
+        _attachedArmRope.WallLinkListener += TryKill;
     }
 
     private void TryKill(GameColor.COLOR c)
@@ -28,7 +28,7 @@ public class Enemy : MonoBehaviour
 
     private void Kill()
     {
-        _attachedRope.WallLinkListener -= TryKill;
+        _attachedArmRope.WallLinkListener -= TryKill;
         //TODO: Spawn Death Object
         Destroy(gameObject);
     }

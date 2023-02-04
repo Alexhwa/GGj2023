@@ -14,7 +14,7 @@ public class Wall : MonoBehaviour
     
 
     [SerializeField] private GameObject ropeObject;
-    private List<Rope> _connectedRopes = new List<Rope>();
+    private List<ArmRope> _connectedRopes = new List<ArmRope>();
 
     public void InitWall(GameColor.COLOR startColor, int ropes)
     {
@@ -22,8 +22,8 @@ public class Wall : MonoBehaviour
         //TODO: Recolor wall
         for (int i = 0; i < ropes; i++)
         {
-            Rope rope = Instantiate(ropeObject).GetComponent<Rope>();
-            _connectedRopes.Add(rope.InitRope(gameObject, i, ropes));
+            ArmRope armRope = Instantiate(ropeObject).GetComponent<ArmRope>();
+            _connectedRopes.Add(armRope.InitRope(gameObject, i, ropes));
         }
 
         clickArea.enabled = false;
@@ -34,10 +34,10 @@ public class Wall : MonoBehaviour
         
     }
 
-    public GameColor.COLOR AddRope(Rope rope)
+    public GameColor.COLOR AddRope(ArmRope armRope)
     {
-        if (_connectedRopes.Contains(rope)) throw new Exception("Wall.cs: Tried to add duplicate rope.");
-        _connectedRopes.Add(rope);
+        if (_connectedRopes.Contains(armRope)) throw new Exception("Wall.cs: Tried to add duplicate rope.");
+        _connectedRopes.Add(armRope);
         return color;
     }
     

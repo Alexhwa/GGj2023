@@ -27,7 +27,7 @@ public class Arena : MonoBehaviour
             float increment = round.time / round.enemies;
             for (int i = 0; i < round.enemies; i++)
             {
-                Instantiate(enemyObject);
+                Instantiate(enemyObject, transform);
                 yield return new WaitForSeconds(increment);
             }
             //If you see this Alex, I'm sorry

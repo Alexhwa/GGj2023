@@ -15,7 +15,7 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
-        _attachedArmRope = Player.Instance.GetRandomRope();
+        _attachedArmRope = GameController.Instance.player.GetRandomRope();
         meshRenderer.material = new Material(meshRenderer.material);
         color = GameColor.RandomColorExcluding(color);
         meshRenderer.material.color = GameColor.GetColor(color);

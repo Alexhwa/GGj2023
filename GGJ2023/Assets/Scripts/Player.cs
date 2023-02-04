@@ -7,8 +7,6 @@ using Random = UnityEngine.Random;
 
 public class Player : MonoBehaviour
 {
-    private static Player _instance;
-    public static Player Instance => _instance ? _instance : _instance = FindObjectOfType<Player>();
     [SerializeField] private GameObject armObject;
     [SerializeField] private Collider hitbox;
 
@@ -24,9 +22,12 @@ public class Player : MonoBehaviour
 
     public void AddArm(Vector3 position)
     {
-        var arm = Instantiate(armObject,transform.parent).transform.GetChild(0);
-        arm.position = position;
-        bodyPhysics.AttachArm(arm.GetComponent<ArmRope>());
+        var arm = Instantiate(armObject,transform.parent);
+        arm.transform.rotation = Quaternion.LookRotation(arm.transform.right, position);
+        var armScript = arm.GetComponent<ArmRope>();
+        armScript.currentState = ArmRope.STATE.Unset;
+        armScript.Launch(position - transform.position);
+        bodyPhysics.AttachArm(armScript);
     }
 
     private void Update()

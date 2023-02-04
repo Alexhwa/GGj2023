@@ -16,8 +16,8 @@ public class ArmRope : MonoBehaviour
     
     
     private GameColor.COLOR _color;
-    private Vector3 rootPoint;
-    private Vector3 anchorPoint;
+    public Vector3 rootPoint;
+    public Vector3 anchorPoint;
     
     public GameColor.COLOR CurrentColor
     {

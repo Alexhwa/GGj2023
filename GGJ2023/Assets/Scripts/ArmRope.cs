@@ -8,7 +8,9 @@ public class ArmRope : MonoBehaviour
     [SerializeField] private GameObject anchor;
     [SerializeField] [Tooltip("Collider marked as trigger")] private Collider selectionBox;
     [SerializeField] private LineRenderer lineRenderer;
-    
+
+    private Rigidbody m_rb;
+    public float moveSpeed;
 
     public enum STATE{Set,Unset}
 
@@ -40,8 +42,18 @@ public class ArmRope : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        currentState = STATE.Unset;
+        currentState = STATE.Set;
         _color = GameColor.COLOR.None;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(currentState == STATE.Unset)
+        {
+            currentState = STATE.Set;
+            m_rb.velocity = Vector3.zero;
+            m_rb.isKinematic = true;
+        }
     }
 
     private void PlaceRope(GameColor.COLOR color)
@@ -50,20 +62,31 @@ public class ArmRope : MonoBehaviour
         WallLinkListener?.Invoke(color);
     }
 
-    private void Update()
+    private void Start()
+    {
+        m_rb = GetComponent<Rigidbody>();
+    }
+
+    private void FixedUpdate()
     {
         rootPoint = Player.Instance.transform.position;
         anchorPoint = anchor.transform.position;
         switch (currentState)
         {
             case STATE.Set:
-                //TODO: Pull player
+                
                 break;
             case STATE.Unset:
-                //TODO: Follow mouse
                 break;
         }
         lineRenderer.SetPosition(0,rootPoint);
         lineRenderer.SetPosition(1,anchorPoint);
+    }
+
+    public void Launch(Vector3 direction)
+    {
+        m_rb.isKinematic = false;
+        m_rb.velocity = direction * moveSpeed;
+        currentState = STATE.Unset;
     }
 }

@@ -17,16 +17,10 @@ public class BodyPhysics : MonoBehaviour
 
 
 
-    public ArmRope[] arms;
+    public List<ArmRope> arms;
 
     private Vector3 targetPosition;
     private Rigidbody m_rb;
-
-    [Header("Selection")]
-    private Ray _ray;
-    private RaycastHit _hit;
-    public LayerMask raycastLayers;
-    private ArmRope _grabbedArm;
 
     // Start is called before the first frame update
     void Start()
@@ -39,56 +33,43 @@ public class BodyPhysics : MonoBehaviour
     void FixedUpdate()
     {
         //Find point for body to try to be at and add force towards it
-        if(arms.Length > 0)
+        if(arms.Count > 1)
         {
             Vector3 averagePosition = new Vector3();
             foreach(ArmRope a in arms)
             {
-                averagePosition += a.transform.position + Vector3.down * gravity / arms.Length / 2;
+                averagePosition += a.transform.position + Vector3.down * gravity / arms.Count / 2;
             }
-            targetPosition = averagePosition / arms.Length;
+            targetPosition = averagePosition / arms.Count;
         }
-        else if(arms.Length == 1)
+        /*else if(arms.Count == 1)
         {
-            targetPosition = arms[0].transform.position + Vector3.down * Vector3.Distance(arms[0].transform.position, transform.position);
-        }
+            targetPosition = arms[0].transform.position + Vector3.down;
+        }*/
 
         Vector3 moveForce = (targetPosition - transform.position) * moveIntensity;
+        /*if (arms.Count == 1)
+        {
+            Vector3 perpMotionVector = Vector3.Cross((targetPosition - transform.position), Vector3.forward);
+            moveForce = (perpMotionVector + (targetPosition - transform.position)) * moveIntensity;
+            if (targetPosition.x < transform.position.x) moveForce *= -1;
+        }*/
+
         if (Vector3.Distance(targetPosition, transform.position) > minDistToStop)
         {
             m_rb.AddForce(moveForce, ForceMode.Impulse);
             m_rb.AddForce(Vector3.down * gravity);
         }
         m_rb.velocity /= moveIntensityDecay;
-
-
-        // Add gravity
-
-
     }
 
-    // Update is called once per frame
-    void Update()
+    public void DetachArm(ArmRope armRef)
     {
-        if (Input.GetMouseButtonDown(0) && _grabbedArm == null)
-        {
-            _ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(_ray, out _hit, 100, raycastLayers))
-            {
-                _grabbedArm = _hit.collider.GetComponent<ArmRope>();
-            }
-        }
-        else if (Input.GetMouseButtonDown(0) && _grabbedArm != null)
-        {
-            _grabbedArm = null;
-        }
+        arms.Remove(armRef);
+    }
 
-        if (_grabbedArm != null)
-        {
-            var mousePosition = Input.mousePosition;
-            mousePosition.z = Camera.main.transform.position.z;
-            var mouseToWorldPoint = -Camera.main.ScreenToWorldPoint(mousePosition);
-            _grabbedArm.transform.position = new Vector3(mouseToWorldPoint.x, mouseToWorldPoint.y, _grabbedArm.transform.position.z);
-        }
+    public void AttachArm(ArmRope armRef)
+    {
+        arms.Add(armRef);
     }
 }

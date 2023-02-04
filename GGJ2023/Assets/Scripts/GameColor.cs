@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Color = System.Drawing.Color;
 
 
 public static class GameColor
@@ -17,7 +16,7 @@ public static class GameColor
 
     private static Dictionary<COLOR, Color> ColorMap = new Dictionary<COLOR, Color>()
     {
-        {COLOR.None, Color.White},{COLOR.Red, Color.Red}, {COLOR.Blue, Color.Blue}, {COLOR.Green, Color.Green}, {COLOR.Yellow, Color.Yellow}
+        {COLOR.None, Color.white},{COLOR.Red, Color.red}, {COLOR.Blue, Color.blue}, {COLOR.Green, Color.green}, {COLOR.Yellow, Color.yellow}
     };
 
     public static COLOR RandomColorExcluding(COLOR color)

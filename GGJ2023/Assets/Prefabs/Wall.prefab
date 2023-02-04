@@ -115,6 +115,7 @@ MonoBehaviour:
   clickArea: {fileID: 5253631387102214379}
   color: -1
   ropeObject: {fileID: 6326150282498019874, guid: d9de46df72eef4648ae47860923c8718, type: 3}
+  meshRenderer: {fileID: 323827421628685625}
 --- !u!1 &4262297380076384401
 GameObject:
   m_ObjectHideFlags: 0

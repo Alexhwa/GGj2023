@@ -22,6 +22,12 @@ public class BodyPhysics : MonoBehaviour
     private Vector3 targetPosition;
     private Rigidbody m_rb;
 
+    [Header("Selection")]
+    private Ray _ray;
+    private RaycastHit _hit;
+    public LayerMask raycastLayers;
+    private Arm _grabbedArm;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -59,5 +65,30 @@ public class BodyPhysics : MonoBehaviour
         // Add gravity
 
 
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(0) && _grabbedArm == null)
+        {
+            _ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(_ray, out _hit, 100, raycastLayers))
+            {
+                _grabbedArm = _hit.collider.GetComponent<Arm>();
+            }
+        }
+        else if (Input.GetMouseButtonDown(0) && _grabbedArm != null)
+        {
+            _grabbedArm = null;
+        }
+
+        if (_grabbedArm != null)
+        {
+            var mousePosition = Input.mousePosition;
+            mousePosition.z = Camera.main.transform.position.z;
+            var mouseToWorldPoint = -Camera.main.ScreenToWorldPoint(mousePosition);
+            _grabbedArm.transform.position = new Vector3(mouseToWorldPoint.x, mouseToWorldPoint.y, _grabbedArm.transform.position.z);
+        }
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public GameColor.COLOR color;
+    public GameColor.COLOR color = GameColor.COLOR.None;
 
     [SerializeField][Tooltip("percent traveled/s")] private float speed;
     
@@ -15,9 +15,7 @@ public class Enemy : MonoBehaviour
     private void Start()
     {
         _attachedArmRope = Player.Instance.GetRandomRope();
-        color = GameColor.RandomColorExcluding(color);
-        //TODO Set enemy color
-        //TODO: attach to the rope object
+        //color = GameColor.RandomColorExcluding(color);
         _attachedArmRope.WallLinkListener += TryKill;
     }
 
@@ -35,6 +33,9 @@ public class Enemy : MonoBehaviour
     
     private void Update()
     {
+        transform.position =
+            Vector3.Lerp(_attachedArmRope.anchorPoint, _attachedArmRope.rootPoint, _percentTraveled / 100);
+        
         _percentTraveled += speed * Time.deltaTime;
     }
 }

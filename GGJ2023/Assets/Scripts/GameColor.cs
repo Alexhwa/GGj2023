@@ -17,7 +17,7 @@ public static class GameColor
 
     private static Dictionary<COLOR, Color> ColorMap = new Dictionary<COLOR, Color>()
     {
-        {COLOR.Red, Color.Red}, {COLOR.Blue, Color.Blue}, {COLOR.Green, Color.Green}, {COLOR.Yellow, Color.Yellow}
+        {COLOR.None, Color.White},{COLOR.Red, Color.Red}, {COLOR.Blue, Color.Blue}, {COLOR.Green, Color.Green}, {COLOR.Yellow, Color.Yellow}
     };
 
     public static COLOR RandomColorExcluding(COLOR color)

@@ -6,7 +6,7 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
     private static GameController _instance;
-    public static GameController Instance = _instance ? _instance : _instance = FindObjectOfType<GameController>();
+    public static GameController Instance => _instance ? _instance : _instance = FindObjectOfType<GameController>();
 
     [SerializeField] private GameObject fourSidedWalls;
 

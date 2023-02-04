@@ -17,7 +17,7 @@ public class BodyPhysics : MonoBehaviour
 
 
 
-    public List<ArmRope> arms;
+    public List<ArmRope> arms = new List<ArmRope>();
 
     private Vector3 targetPosition;
     private Rigidbody m_rb;

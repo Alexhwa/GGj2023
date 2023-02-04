@@ -50,7 +50,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16011fbaa33bc5845b4a46fe142046c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  armObject: {fileID: 6326150282498019874, guid: d9de46df72eef4648ae47860923c8718, type: 3}
   hitbox: {fileID: 2025500048815507719}
+  bodyPhysics: {fileID: 987519523}
   raycastLayers:
     serializedVersion: 2
     m_Bits: 8
@@ -241,10 +243,7 @@ MonoBehaviour:
   moveIntensityDecay: 1.15
   minDistToStop: 0.25
   gravity: 2
-  arms:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  arms: []
 --- !u!1 &2025500049101501928
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42831a0d61e111145a5fa89d9b2420e2, type: 3}
   m_Name: Brutal
   m_EditorClassIdentifier: 
-  duration: 70
-  spawnInterval: 3
-  spawnIntervalDeviation: 0.3
-  speedUpScale: 0.15
+  duration: 40
+  spawnInterval: 2.6
+  spawnIntervalDeviation: 0.2
+  speedUpScale: 0.25
   patterns:
   - {fileID: 11400000, guid: b8f5863c2b66c7a4598c714925ae6d06, type: 2}
   - {fileID: 11400000, guid: b867b50fa16a6b3448c5d1ea76f8543c, type: 2}

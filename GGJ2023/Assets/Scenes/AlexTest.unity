@@ -817,6 +817,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1138413817}
   m_CullTransparentMesh: 1
+--- !u!1001 &1435182066
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2076431386949987984, guid: 1a3a4da57b4e33e4c8155eba9399d6c3, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2076431386949987984, guid: 1a3a4da57b4e33e4c8155eba9399d6c3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2076431386949987984, guid: 1a3a4da57b4e33e4c8155eba9399d6c3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2076431386949987984, guid: 1a3a4da57b4e33e4c8155eba9399d6c3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2076431386949987984, guid: 1a3a4da57b4e33e4c8155eba9399d6c3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2076431386949987984, guid: 1a3a4da57b4e33e4c8155eba9399d6c3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2076431386949987984, guid: 1a3a4da57b4e33e4c8155eba9399d6c3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2076431386949987984, guid: 1a3a4da57b4e33e4c8155eba9399d6c3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2076431386949987984, guid: 1a3a4da57b4e33e4c8155eba9399d6c3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2076431386949987984, guid: 1a3a4da57b4e33e4c8155eba9399d6c3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2076431386949987984, guid: 1a3a4da57b4e33e4c8155eba9399d6c3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2076431386949987988, guid: 1a3a4da57b4e33e4c8155eba9399d6c3, type: 3}
+      propertyPath: m_Name
+      value: Charger
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1a3a4da57b4e33e4c8155eba9399d6c3, type: 3}
 --- !u!1 &1535985207
 GameObject:
   m_ObjectHideFlags: 0
@@ -1002,6 +1059,10 @@ PrefabInstance:
     - target: {fileID: 150775264840035661, guid: a7649466d9209954aa7852a117b030d0, type: 3}
       propertyPath: m_Name
       value: Space Backdrop
+      objectReference: {fileID: 0}
+    - target: {fileID: 150775264840035662, guid: a7649466d9209954aa7852a117b030d0, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7649466d9209954aa7852a117b030d0, type: 3}

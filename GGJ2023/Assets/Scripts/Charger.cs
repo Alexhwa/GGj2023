@@ -17,13 +17,19 @@ public class Charger : MonoBehaviour
 
     private GameColor.COLOR color;
     private Rigidbody m_rb;
-    
 
     private enum MoveState
     {
         Wait, Aim, Charge
     }
     private MoveState moveState;
+    private MoveState currentState {
+        get => moveState;
+        set 
+        { 
+            moveState = value;
+        }
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -52,9 +58,11 @@ public class Charger : MonoBehaviour
 
     private IEnumerator Wait()
     {
+        currentState = MoveState.Wait;
         float timer = waitDuration;
-        while (timer > 0)
+        while (timer > 0 || GameController.Instance.player == null)
         {
+            m_rb.velocity = Vector3.zero;
             timer -= Time.deltaTime;
             yield return null;
         }
@@ -63,11 +71,22 @@ public class Charger : MonoBehaviour
 
     private IEnumerator Aim()
     {
+        currentState = MoveState.Aim;
         float timer = aimDuration;
         while (timer > 0)
         {
-            transform.up = Vector3.RotateTowards(transform.up, GameController.Instance.player.transform.position - transform.position, 0.1f, 10);
-            transform.position += transform.up * aimMoveSpeed * Time.deltaTime * (timer / aimDuration);
+            m_rb.velocity = Vector3.zero;
+            var towardsPlyerVector = (GameController.Instance.player.transform.position - transform.position).normalized;
+            transform.up = Vector3.RotateTowards(transform.up, towardsPlyerVector, 0.1f, 10);
+            /*if(transform.eulerAngles.z > 0 || transform.eulerAngles.z < -180)
+            {
+                transform.forward = Vector3.forward;
+            }
+            else
+            {
+                transform.forward = -Vector3.forward;
+            }*/
+            transform.position += towardsPlyerVector * aimMoveSpeed * Time.deltaTime * (timer / aimDuration);
             timer -= Time.deltaTime;
             yield return null;
         }
@@ -76,6 +95,7 @@ public class Charger : MonoBehaviour
 
     private IEnumerator Charge()
     {
+        currentState = MoveState.Charge;
         m_rb.isKinematic = false;
 
         var chargeDirection = (GameController.Instance.player.transform.position - transform.position).normalized;

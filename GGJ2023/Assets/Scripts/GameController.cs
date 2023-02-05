@@ -51,10 +51,10 @@ public class GameController : MonoBehaviour
 
     public IEnumerator StartGame(GameLevel level)
     {
-        if(GameManager.Instance != null) GameManager.Instance.musicManager.PlayMain();
+        //if(GameManager.Instance != null) GameManager.Instance.musicManager.PlayMain();
         startAnimation.transform.parent.gameObject.SetActive(true);
         yield return new WaitForSeconds(3);
-        CurrentArena.StartGameRounds(level.rounds);
+        CurrentArena.StartGameRounds();
     }
 
     public void ClearField()

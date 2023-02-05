@@ -10,7 +10,7 @@ public class Arena : MonoBehaviour
     [SerializeField] private EnemySpawner spawner;
     private void Start()
     {
-        spawner.onSpawn.AddListener(x => print(x));
+        spawner.onSpawn.AddListener(x => SpawnEnemies(x));
         spawner.StartSpawning();
     }
 
@@ -24,9 +24,9 @@ public class Arena : MonoBehaviour
         }
     }
 
-    public void StartGameRounds(List<GameLevel.Round> rounds)
+    public void StartGameRounds()
     {
-        StartCoroutine(HandleGameRounds(rounds));
+        spawner.StartSpawning();
 
     }
     private IEnumerator HandleGameRounds(List<GameLevel.Round> rounds)
@@ -36,7 +36,7 @@ public class Arena : MonoBehaviour
             float increment = round.time / round.enemies;
             for (int i = 0; i < round.enemies; i++)
             {
-                Instantiate(enemyObject, transform);
+                
                 yield return new WaitForSeconds(increment);
             }
             //If you see this Alex, I'm sorry
@@ -44,5 +44,19 @@ public class Arena : MonoBehaviour
             //TODO: End Round;
         }
         //TODO: End Game
+    }
+    private void SpawnEnemies(int enemies)
+    {
+        if(enemies > 0)
+        {
+            for(int i = 0; i < enemies; i++)
+            {
+                Instantiate(enemyObject, transform);
+            }
+        }
+        else
+        {
+            //Spawn charger
+        }
     }
 }

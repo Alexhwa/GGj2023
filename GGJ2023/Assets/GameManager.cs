@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
 {
     private static GameManager _instance;
     public static GameManager Instance => _instance ? _instance : _instance = FindObjectOfType<GameManager>();
+    public MusicManager musicManager;
+    
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);

@@ -15,6 +15,8 @@ public class BodyPhysics : MonoBehaviour
     [SerializeField]
     private float gravity;
 
+    [SerializeField]
+    private float randomForceStrength;
 
 
     public List<ArmRope> arms = new List<ArmRope>();
@@ -61,5 +63,10 @@ public class BodyPhysics : MonoBehaviour
     public void AttachArm(ArmRope armRef)
     {
         arms.Add(armRef);
+    }
+
+    public void ApplyRandomForce()
+    {
+        m_rb.AddForce(Random.insideUnitCircle * randomForceStrength, ForceMode.Impulse);
     }
 }

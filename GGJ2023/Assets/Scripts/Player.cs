@@ -39,14 +39,22 @@ public class Player : MonoBehaviour
             _ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(_ray, out _hit, 100, raycastLayers))
             {
-                var armScript = _hit.collider.GetComponent<ArmRope>();
-                if (armScript.CanBeGrabbed()) {
-                    armScript.SetCanBeGrabbed(false);
-                    _grabbedArm = armScript;
-                    bodyPhysics.DetachArm(_grabbedArm);
-                    _grabbedArm.CurrentColor = GameColor.COLOR.None;
+                if (_hit.collider.gameObject.tag.Equals("Player"))
+                {
+                    bodyPhysics.ApplyRandomForce();
                 }
-                return;
+                else
+                {
+                    var armScript = _hit.collider.GetComponent<ArmRope>();
+                    if (armScript.CanBeGrabbed())
+                    {
+                        armScript.SetCanBeGrabbed(false);
+                        _grabbedArm = armScript;
+                        bodyPhysics.DetachArm(_grabbedArm);
+                        _grabbedArm.CurrentColor = GameColor.COLOR.None;
+                    }
+                    return;
+                }
             }
         }
         if (_grabbedArm != null)

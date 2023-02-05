@@ -15,9 +15,9 @@ GameObject:
   - component: {fileID: 2025500048815507712}
   - component: {fileID: 987519523}
   - component: {fileID: 1138532101199844457}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Body
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -220,10 +220,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 229a965589c54ae419ae8cba3743910a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveIntensity: 3
+  moveIntensity: 6
   moveIntensityDecay: 1.15
   minDistToStop: 0.25
   gravity: 2
+  randomForceStrength: 7
   arms:
   - {fileID: 1262801683470843332}
   - {fileID: 1262801683908217400}
@@ -244,7 +245,7 @@ MonoBehaviour:
   bodyPhysics: {fileID: 987519523}
   raycastLayers:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 136
   grabbedArmFollowDistance: 6
   retractSpeed: 10
 --- !u!1 &2025500049101501928

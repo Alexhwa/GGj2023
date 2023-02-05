@@ -43,12 +43,21 @@ public class Charger : MonoBehaviour
     {
         if (collision.gameObject.tag.Equals("Wall"))
         {
-            m_rb.velocity = Vector3.zero;
-            m_rb.isKinematic = true;
-            StartCoroutine(Wait());
+            if (gameObject.GetComponent<Wall>().color == color) Kill();
+            else
+            {
+                m_rb.velocity = Vector3.zero;
+                m_rb.isKinematic = true;
+                StartCoroutine(Wait());
+            }
         }
     }
 
+    private void Kill()
+    {
+        //TODO:Death Object
+        Destroy(gameObject);
+    }
     // Start is called before the first frame update
     void Start()
     {

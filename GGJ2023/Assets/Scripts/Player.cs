@@ -24,10 +24,11 @@ public class Player : MonoBehaviour
     {
         var arm = Instantiate(armObject,transform.parent);
         arm.transform.rotation = Quaternion.LookRotation(arm.transform.right, position);
-        var armScript = arm.GetComponent<ArmRope>();
+        var armScript = arm.GetComponentInChildren<ArmRope>();
         armScript.currentState = ArmRope.STATE.Unset;
-        armScript.Launch(position - transform.position);
         bodyPhysics.AttachArm(armScript);
+        armScript.Launch((position - transform.position).normalized);
+        
     }
 
     private void Update()

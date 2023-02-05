@@ -13,4 +13,5 @@ public class Difficulty : ScriptableObject
     public float speedUpScale;
     public List<SpawnPattern> patterns;
     public GameObject arena;
+    public int arms;
 }

@@ -23,3 +23,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6d5584d125e7dea4abdcf593190f41c3, type: 2}
   - {fileID: 11400000, guid: 3da7cd541720f0d45a5b62ac76c718e3, type: 2}
   arena: {fileID: 974644799707634418, guid: b794a2229bdf2fa4a8f2d64dcb274e66, type: 3}
+  arms: 5

@@ -17,6 +17,7 @@ public class Arena : MonoBehaviour
     {
         timerText = GameObject.FindGameObjectWithTag("Timer").GetComponent<Text>();
         spawner.onSpawn.AddListener(x => SpawnEnemies(x));
+        spawner.onFinishedSpawn.AddListener(() => GameController.Instance.StopGame(true));
         spawner.StartSpawning();
     }
 

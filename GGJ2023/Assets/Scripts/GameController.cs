@@ -60,14 +60,14 @@ public class GameController : MonoBehaviour
         if(playerHealth <= 0) StopGame(false);
     }
 
-    private void StopGame(bool win)
+    public void StopGame(bool win)
     {
         Time.timeScale = 0;
         endAnimation.SetActive(true);
         endAnimation.GetComponent<DOTweenAnimation>().DOPlay();
         if (win)
         {
-            
+            print("Win");
         }
         else
         {

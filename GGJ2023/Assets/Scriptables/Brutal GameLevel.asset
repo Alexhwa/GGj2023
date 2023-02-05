@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 14686968c0d17e74d8b4b245606af903, type: 3}
-  m_Name: TestLevel
+  m_Name: Brutal GameLevel
   m_EditorClassIdentifier: 
-  armCount: 0
+  armCount: 6
   walls:
   - color: 0
     startingArms: 1
@@ -21,6 +21,10 @@ MonoBehaviour:
   - color: 2
     startingArms: 1
   - color: 3
+    startingArms: 1
+  - color: 4
+    startingArms: 1
+  - color: 5
     startingArms: 1
   rounds:
   - enemies: 5

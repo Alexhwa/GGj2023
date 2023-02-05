@@ -5,19 +5,38 @@ using UnityEngine;
 public class ClawAccordion : MonoBehaviour
 {
     [SerializeField] private GameObject claw;
+    [SerializeField] private GameObject clawBase;
     [SerializeField] private GameObject extender;
 
-    private readonly float SCALE_VALUE = 2.965f * 2;
+    private readonly float SCALE_VALUE = 6;
     private float distance;
+    private Vector3 InitialScale;
+
+    void Start()
+    {
+        InitialScale = transform.localScale;
+        LengthUpdate();
+    }
 
     void Update()
     {
-        LengthUpdate();
+        if (claw.transform.hasChanged || clawBase.transform.hasChanged)
+        {
+            LengthUpdate();
+        }
     }
 
     private void LengthUpdate()
     {
-        distance = Vector3.Distance(transform.position, claw.transform.position);
-        extender.transform.localScale = new Vector3(1, SCALE_VALUE * (distance), 1);
+        distance = Vector3.Distance(clawBase.transform.position, claw.transform.position);
+        transform.localScale = new Vector3(InitialScale.x, (SCALE_VALUE*distance/2f), InitialScale.z);
+
+        Vector3 middlePoint = (claw.transform.position + clawBase.transform.position)/2f;
+        transform.position = middlePoint;
+
+        Vector3 rotationDirection = (clawBase.transform.position - claw.transform.position);
+        transform.up = rotationDirection;
+
+        //extender.transform.localScale = new Vector3(1, SCALE_VALUE * (distance), 1);
     }
 }

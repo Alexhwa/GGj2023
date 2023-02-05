@@ -79,7 +79,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   claw: {fileID: 8849912512333382813}
+  clawBase: {fileID: 0}
   extender: {fileID: 5146946071760087913}
+  SCALE_VALUE: 12
 --- !u!1 &1248608872751737845
 GameObject:
   m_ObjectHideFlags: 0
@@ -251,8 +253,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5146946071760087913}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.8804132e-21, y: 0, z: -1.0842021e-21}
+  m_LocalRotation: {x: -4.2351647e-22, y: -0, z: -2.6900023e-22, w: 1}
+  m_LocalPosition: {x: -3.484098e-14, y: 4.1533684e-21, z: -0.00000025931286}
   m_LocalScale: {x: 1, y: 15, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

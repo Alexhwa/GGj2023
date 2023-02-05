@@ -11,7 +11,8 @@ public class ArmRope : MonoBehaviour
     [SerializeField] [Tooltip("Collider marked as trigger")] private Collider selectionBox;
     //[SerializeField] private LineRenderer lineRenderer;
 
-    [SerializeField]private Rigidbody m_rb;
+    [SerializeField] private Rigidbody m_rb;
+    [SerializeField] private GameObject clawVFX;
     [SerializeField] public AudioSource extendSound;
     [SerializeField] public AudioSource contractSound;
     public float moveSpeed;
@@ -59,6 +60,7 @@ public class ArmRope : MonoBehaviour
             m_rb.velocity = Vector3.zero;
             m_rb.isKinematic = true;
             PlaceRope(collision.gameObject.GetComponent<Wall>().color);
+            clawVFX.SetActive(true);
             _anim.SetBool("Closed", true);
         }
     }

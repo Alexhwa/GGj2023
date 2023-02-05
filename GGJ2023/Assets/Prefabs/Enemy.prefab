@@ -5086,5 +5086,6 @@ MonoBehaviour:
   color: 0
   bodySprite: {fileID: 6248184508560155928}
   particleSystem: {fileID: 6834599941272024547}
+  enemyDeathVFX: {fileID: 4962733887441846124, guid: 102376140500ff14a8aebaa978b4b482, type: 3}
   speed: 20
   _attachedArmRope: {fileID: 0}

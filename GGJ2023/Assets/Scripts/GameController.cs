@@ -56,14 +56,21 @@ public class GameController : MonoBehaviour
         CurrentColors.Clear();
     }
 
+    private bool IFrame = false;
     public void TakeDamage()
     {
         player.playerVisuals.DoHurt();
-
         damageSource.Play();
         playerHealth -= 1;
         HealthChangedListener?.Invoke(playerHealth);
         if(playerHealth <= 0) StopGame(false);
+        //else StopCoroutine(IFrameTimer());
+    }
+
+    private IEnumerator IFrameTimer()
+    {
+        yield return new WaitForSeconds(.5f);
+        IFrame = false;
     }
 
     public void StopGame(bool win)

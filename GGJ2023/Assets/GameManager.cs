@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     
     private void Awake()
     {
+        if (_instance == null) _instance = this;
+        else Destroy(gameObject);
         DontDestroyOnLoad(gameObject);
     }
 
@@ -80,7 +82,7 @@ public class GameManager : MonoBehaviour
         s.allowSceneActivation = false;
         while (!s.isDone) yield return null;
         s.allowSceneActivation = true;
-        //anim.Play("black-out");
+        anim.Play("black-out");
         yield return new WaitForSeconds(.5f);
     }
     

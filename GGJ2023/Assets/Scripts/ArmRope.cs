@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -11,6 +12,8 @@ public class ArmRope : MonoBehaviour
     //[SerializeField] private LineRenderer lineRenderer;
 
     [SerializeField]private Rigidbody m_rb;
+    [SerializeField] public AudioSource extendSound;
+    [SerializeField] public AudioSource contractSound;
     public float moveSpeed;
 
     public enum STATE{Set,Unset}
@@ -35,24 +38,21 @@ public class ArmRope : MonoBehaviour
     public Animator _anim;
 
     public event Action<GameColor.COLOR> WallLinkListener;
-    private void Start()
-    {
-        //lineRenderer.material = new Material(lineRenderer.material);
-    }
+    
     public ArmRope InitRope(GameObject wallObject, int ropeNumber, int totalRopes)
     {
         //TODO: link start of rope with Player;
         //TODO: Do some logic using 2 given ints to evenly space the ropes on the wall;
         return this;
     }
-    private void OnMouseDown()
+    public void OnGrab()
     {
         _color = GameColor.COLOR.None;
+        contractSound.Play();
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        
         if (currentState == STATE.Unset && collision.gameObject.tag.Equals("Wall"))
         {
             currentState = STATE.Set;
@@ -86,12 +86,13 @@ public class ArmRope : MonoBehaviour
         //lineRenderer.SetPosition(1,anchorPoint);
     }
 
-    public void Launch(Vector3 direction)
+    public void Launch(Vector3 direction, bool mute = false)
     {
         m_rb.isKinematic = false;
         m_rb.velocity = direction * moveSpeed;
         currentState = STATE.Unset;
         _anim.SetBool("Closed", false);
+        if(!mute)extendSound.Play();
     }
     public bool CanBeGrabbed()
     {

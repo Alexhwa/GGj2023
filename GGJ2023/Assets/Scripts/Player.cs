@@ -30,11 +30,10 @@ public class Player : MonoBehaviour
         constraint.sourceTransform = bodyPhysics.transform;
         constraint.weight = 1;
         arm.GetComponentInChildren<ParentConstraint>().AddSource(constraint);
-        
         var armScript = arm.GetComponentInChildren<ArmRope>();
         armScript.currentState = ArmRope.STATE.Unset;
         bodyPhysics.AttachArm(armScript);
-        armScript.Launch((position - transform.position).normalized);
+        armScript.Launch((position - transform.position).normalized, true);
         
     }
 
@@ -57,7 +56,7 @@ public class Player : MonoBehaviour
                         armScript.SetCanBeGrabbed(false);
                         _grabbedArm = armScript;
                         bodyPhysics.DetachArm(_grabbedArm);
-                        _grabbedArm.CurrentColor = GameColor.COLOR.None;
+                        _grabbedArm.OnGrab();
                     }
                     return;
                 }

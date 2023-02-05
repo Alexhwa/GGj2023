@@ -12,6 +12,8 @@ public class Charger : MonoBehaviour
     private float aimDuration;
     [SerializeField]
     private float aimMoveSpeed;
+    [SerializeField]
+    private GameObject enemyDeathVFX;
 
     private float waitTimer;
 
@@ -61,6 +63,7 @@ public class Charger : MonoBehaviour
 
     private void Kill()
     {
+        Instantiate(enemyDeathVFX, transform.position, Quaternion.identity);
         //TODO:Death Object
         Destroy(gameObject);
     }

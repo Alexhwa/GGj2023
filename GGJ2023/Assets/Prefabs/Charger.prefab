@@ -122,6 +122,7 @@ MonoBehaviour:
   waitDuration: 0.3
   aimDuration: 3
   aimMoveSpeed: 0.6
+  enemyDeathVFX: {fileID: 4962733887441846124, guid: 102376140500ff14a8aebaa978b4b482, type: 3}
   mesh: {fileID: 7599777071899864849}
   materials:
   - {fileID: 2100000, guid: 6fb7b3243df82a34fb9f413d172b6289, type: 2}

@@ -23,6 +23,8 @@ public class Player : MonoBehaviour
     public float grabbedArmFollowDistance;
     public float retractSpeed;
 
+    [SerializeField] private GameObject hurtVFX;
+
     public void AddArm(Vector3 position)
     {
         var arm = Instantiate(armObject,transform.parent);
@@ -96,6 +98,7 @@ public class Player : MonoBehaviour
     {
         GameController.Instance.TakeDamage();
         playerVisuals.DoHurt();
+        hurtVFX.SetActive(true);
         //TODO: Damage animation
     }
     private void OnCollisionEnter(Collision other)

@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] private SpriteRenderer bodySprite;
     [SerializeField] private ParticleSystem particleSystem;
+    [SerializeField] private GameObject enemyDeathVFX;
     [SerializeField][Tooltip("percent traveled/s")] private float speed;
     
     [Range(0,100)]private float _percentTraveled;
@@ -31,6 +32,7 @@ public class Enemy : MonoBehaviour
     private void Kill()
     {
         _attachedArmRope.WallLinkListener -= TryKill;
+        Instantiate(enemyDeathVFX, transform.position, Quaternion.identity);
         //TODO: Spawn Death Object
         Destroy(gameObject);
     }

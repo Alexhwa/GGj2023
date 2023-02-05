@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -20,8 +21,12 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator LoadSequence(string scene, GameLevel level)
     {
+        anim.Play("black-in");
+        yield return new WaitForSeconds(.5f);
         SceneManager.LoadScene(scene);
         while (SceneManager.GetActiveScene().name != scene) yield return null;
+        anim.Play("black-out");
+        yield return new WaitForSeconds(.5f);
         GameController.Instance.SetUpGame(level);
     }
 
@@ -42,11 +47,29 @@ public class GameManager : MonoBehaviour
 
     public void LoadTitle()
     {
-        
+        StartCoroutine(LoadSequence("Title"));
     }
     public void LoadLevelSelect()
     {
-        
+        StartCoroutine(LoadSequence("Title"));
+    }
+
+    private void LoadScene(string scene)
+    {
+        StartCoroutine(LoadSequence(scene));
+    }
+
+    [SerializeField] private Animator anim;
+    private IEnumerator LoadSequence(string scene)
+    {
+        anim.Play("black-in");
+        yield return new WaitForSeconds(.5f);
+        var s = SceneManager.LoadSceneAsync(scene);
+        s.allowSceneActivation = false;
+        while (!s.isDone) yield return null;
+        s.allowSceneActivation = true;
+        anim.Play("black-out");
+        yield return new WaitForSeconds(.5f);
     }
     
 }

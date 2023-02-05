@@ -44,10 +44,10 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Player.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/PlayerVisuals.cs" />
       <option value="$PROJECT_DIR$/Assets/HealthBar.cs" />
-      <option value="$PROJECT_DIR$/Assets/GameManager.cs" />
       <option value="$PROJECT_DIR$/Assets/TitleScreen.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GameController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Charger.cs" />
+      <option value="$PROJECT_DIR$/Assets/GameManager.cs" />
     </changedPaths>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />

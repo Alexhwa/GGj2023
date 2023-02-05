@@ -6,7 +6,7 @@ Texture2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: z__GradientRampTex{"mode":0,"colorKeys":[{"color":{"r":1.0,"g":0.0,"b":0.5081825256347656,"a":1.0},"time":0.0},{"color":{"r":1.0,"g":0.0,"b":0.5081825256347656,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":1.0,"time":0.0},{"alpha":1.0,"time":1.0}]}
+  m_Name: z__GradientRampTex{"mode":0,"colorKeys":[{"color":{"r":1.0,"g":0.8705883026123047,"b":0.04313725605607033,"a":1.0},"time":0.0},{"color":{"r":1.0,"g":0.8893330097198486,"b":0.0,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":1.0,"time":0.0},{"alpha":1.0,"time":1.0}]}
   m_ImageContentsHash:
     serializedVersion: 2
     Hash: 00000000000000000000000000000000
@@ -41,7 +41,7 @@ Texture2D:
   m_ColorSpace: 1
   m_PlatformBlob: 
   image data: 1024
-  _typelessdata: ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082ffff0082
+  _typelessdata: ffffde0bffffde0bffffde0bffffde0bffffde0bffffde0bffffde0bffffde0bffffde0bffffde0bffffde0bffffde0bffffde0affffde0affffde0affffde0affffde0affffde0affffde0affffde0affffde0affffde0affffde0affffde0affffde0affffde0affffde0affffdf0affffdf0affffdf0affffdf0affffdf0affffdf0affffdf0affffdf0affffdf09ffffdf09ffffdf09ffffdf09ffffdf09ffffdf09ffffdf09ffffdf09ffffdf09ffffdf09ffffdf09ffffdf09ffffdf09ffffdf09ffffdf09ffffdf09ffffdf09ffffdf09ffffdf09ffffdf09ffffdf09ffffdf09ffffdf09ffffdf08ffffdf08ffffdf08ffffdf08ffffdf08ffffdf08ffffdf08ffffdf08ffffdf08ffffdf08ffffdf08ffffdf08ffffdf08ffffdf08ffffdf08ffffdf08ffffdf08ffffdf08ffffdf08ffffdf08ffffdf08ffffdf08ffffdf08ffffe008ffffe007ffffe007ffffe007ffffe007ffffe007ffffe007ffffe007ffffe007ffffe007ffffe007ffffe007ffffe007ffffe007ffffe007ffffe007ffffe007ffffe007ffffe007ffffe007ffffe007ffffe007ffffe007ffffe007ffffe006ffffe006ffffe006ffffe006ffffe006ffffe006ffffe006ffffe006ffffe006ffffe006ffffe006ffffe006ffffe006ffffe006ffffe006ffffe006ffffe006ffffe006ffffe006ffffe006ffffe006ffffe006ffffe006ffffe005ffffe005ffffe005ffffe005ffffe005ffffe005ffffe105ffffe105ffffe105ffffe105ffffe105ffffe105ffffe105ffffe105ffffe105ffffe105ffffe105ffffe105ffffe105ffffe105ffffe105ffffe105ffffe105ffffe104ffffe104ffffe104ffffe104ffffe104ffffe104ffffe104ffffe104ffffe104ffffe104ffffe104ffffe104ffffe104ffffe104ffffe104ffffe104ffffe104ffffe104ffffe104ffffe104ffffe104ffffe104ffffe104ffffe103ffffe103ffffe103ffffe103ffffe103ffffe103ffffe103ffffe103ffffe103ffffe103ffffe103ffffe103ffffe103ffffe203ffffe203ffffe203ffffe203ffffe203ffffe203ffffe203ffffe203ffffe203ffffe203ffffe203ffffe202ffffe202ffffe202ffffe202ffffe202ffffe202ffffe202ffffe202ffffe202ffffe202ffffe202ffffe202ffffe202ffffe202ffffe202ffffe202ffffe202ffffe202ffffe202ffffe202ffffe202ffffe202ffffe202ffffe201ffffe201ffffe201ffffe201ffffe201ffffe201ffffe201ffffe201ffffe201ffffe201ffffe201ffffe201ffffe201ffffe201ffffe201ffffe201ffffe201ffffe201ffffe201ffffe201ffffe301ffffe301ffffe301ffffe300ffffe300ffffe300ffffe300ffffe300ffffe300ffffe300ffffe300ffffe300ffffe300ffffe300ffffe300
   m_StreamData:
     serializedVersion: 2
     offset: 0
@@ -54,7 +54,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: BotBodyHURT_MAT
+  m_Name: Wall_MAT 2
   m_Shader: {fileID: 4800000, guid: 2a230514c860643f69b6a4d1871d3825, type: 3}
   m_ValidKeywords:
   - DR_OUTLINE_ON
@@ -80,11 +80,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: 566f65aa91a99cd42b4b59e85706c416, type: 3}
+        m_Texture: {fileID: 2800000, guid: b9043736dd4b3eb4390ad48f77457ccb, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 22e0209159dbf414e9d0154c90c96c72, type: 3}
+        m_Texture: {fileID: 2800000, guid: 1cff1c9cabafed040a5f3abf3a08ba19, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -155,7 +155,7 @@ Material:
     - _FlatRimLightAlign: 0
     - _FlatRimSize: 0.5
     - _FlatSpecularEdgeSmoothness: 0
-    - _FlatSpecularSize: 0.841
+    - _FlatSpecularSize: 0.908
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
@@ -173,7 +173,7 @@ Material:
     - _OutlineDepthOffset: 0
     - _OutlineEnabled: 1
     - _OutlineScale: 1
-    - _OutlineWidth: 2.51
+    - _OutlineWidth: 3.4
     - _OverrideBakedGi: 0
     - _OverrideLightAttenuation: 0
     - _OverrideLightmapDir: 0
@@ -181,14 +181,14 @@ Material:
     - _QueueOffset: 0
     - _ReceiveShadows: 0
     - _RimEnabled: 0
-    - _SelfShadingSize: 0
+    - _SelfShadingSize: 0.396
     - _SmoothnessTextureChannel: 0
     - _SpecularEnabled: 1
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Surface: 0
     - _TextureBlendingMode: 0
-    - _TextureImpact: 1
+    - _TextureImpact: 0
     - _UVSec: 0
     - _UnityShadowOcclusion: 0
     - _VertexColorsEnabled: 0
@@ -198,11 +198,11 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _ColorGradient: {r: 0.85023, g: 0.85034, b: 0.8504499, a: 0.85056}
     - _DetailMapColor: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 1, g: 0, b: 0, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FlatRimColor: {r: 0.85023, g: 0.85034, b: 0.85045, a: 0.85056}
-    - _FlatSpecularColor: {r: 1, g: 0.10849059, b: 0.10849059, a: 1}
+    - _FlatSpecularColor: {r: 0.3584906, g: 0.1998321, b: 0.08962265, a: 1}
     - _LightAttenuation: {r: 0, g: 1, b: 0, a: 0}
     - _LightmapDirection: {r: 0, g: 1, b: 0, a: 0}
-    - _OutlineColor: {r: 1, g: 0, b: 0, a: 1}
+    - _OutlineColor: {r: 1, g: 0.82915103, b: 0, a: 1}
     - _ShadowColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []

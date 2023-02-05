@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: afaaa2fac0db25c44a754dc4d27d1c43
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Cyber Graph
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: d82cc9fd1038b5540810990aaf369ceb, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

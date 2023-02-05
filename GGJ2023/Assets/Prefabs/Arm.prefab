@@ -439,7 +439,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 1e7d261e1874f2747813d4f73bdab881, type: 2}
   extendSound: {fileID: 8138935675717059070}
   contractSound: {fileID: 2278477397220267957}
-  hitSound: {fileID: 0}
+  hitSound: {fileID: 1074510759826377886}
   moveSpeed: 35
   currentState: 0
   rootPoint: {x: 0, y: 0, z: 0}

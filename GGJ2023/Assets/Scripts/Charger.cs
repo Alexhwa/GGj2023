@@ -37,7 +37,8 @@ public class Charger : MonoBehaviour
     {
         if (other.gameObject.tag.Equals("Player"))
         {
-            print(other.gameObject.name);
+            GameController.Instance.TakeDamage();
+            Destroy(gameObject);
         }
     }
 

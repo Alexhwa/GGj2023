@@ -36,6 +36,7 @@ public class EnemySpawner : MonoBehaviour
             }
             if (elapsedTime >= currentDiffculty.duration)
             {
+                onFinishedSpawn.Invoke();
                 Reset();
             }
         }

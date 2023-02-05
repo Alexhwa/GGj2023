@@ -977,7 +977,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &614963188
 Transform:
   m_ObjectHideFlags: 0
@@ -2696,6 +2696,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1846623489}
   m_CullTransparentMesh: 1
+--- !u!114 &1918919406 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1094996431528981778, guid: 55f116e7390dcf84581a843f8109e8d2, type: 3}
+  m_PrefabInstance: {fileID: 1304094093108771679}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc9ced2d24a36ee439a58c4f7b3ef6ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1979755565
 GameObject:
   m_ObjectHideFlags: 0
@@ -3185,6 +3196,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1304094093013479692, guid: 55f116e7390dcf84581a843f8109e8d2, type: 3}
+      propertyPath: musicManager
+      value: 
+      objectReference: {fileID: 1918919406}
     - target: {fileID: 1304094093013479693, guid: 55f116e7390dcf84581a843f8109e8d2, type: 3}
       propertyPath: m_Name
       value: GameManager

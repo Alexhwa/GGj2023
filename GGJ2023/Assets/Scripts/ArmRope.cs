@@ -80,14 +80,9 @@ public class ArmRope : MonoBehaviour
             m_rb.isKinematic = true;
             PlaceRope(collision.gameObject.GetComponent<Wall>().color);
             clawVFX.SetActive(true);
-            if((int)collision.gameObject.GetComponent<Wall>().color > 0)
-            {
-                StartCoroutine(FlashWhenGrabbing(clawColorMaterials[(int)collision.gameObject.GetComponent<Wall>().color]));
-            }else
-            {
-                StartCoroutine(FlashWhenGrabbing(flashMaterial));
-            }
-            
+            StartCoroutine(FlashWhenGrabbing(clawColorMaterials[(int)collision.gameObject.GetComponent<Wall>().color]));
+
+
             _anim.SetBool("Closed", true);
         }
     }

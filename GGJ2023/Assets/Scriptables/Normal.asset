@@ -22,3 +22,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3a8f012e680132a4297649b109c18cec, type: 2}
   - {fileID: 11400000, guid: 1ba68a1a89ff6094982687527b181be7, type: 2}
   - {fileID: 11400000, guid: 45ef892703814c64ca134503ff0c2f75, type: 2}
+  arena: {fileID: 6514093522039313357, guid: e9666f86189ad344788eaad97d6ec9d5, type: 3}

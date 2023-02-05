@@ -26,20 +26,9 @@ public class GameController : MonoBehaviour
     private int playerHealth;
     private GameLevel currentLevel;
     
-    public void SetUpGame(GameLevel level)
+    public void SetUpGame(GameLevel level, Difficulty difficulty)
     {
-        switch (level.walls.Count)
-        {
-            case 4:
-                Instantiate(fourSidedWalls, Vector3.zero, Quaternion.identity);
-                break;
-            
-        
-        
-            default:
-                throw new Exception("GameController.cs: Invalid walls in Game Level: " + level.name);
-                break;
-        }
+        Instantiate(difficulty.arena, Vector3.zero, Quaternion.identity);
         player = Instantiate(playerObject, Vector3.zero, Quaternion.identity).GetComponentInChildren<Player>();
         playerHealth = maxHealth;
         HealthChangedListener?.Invoke(maxHealth);

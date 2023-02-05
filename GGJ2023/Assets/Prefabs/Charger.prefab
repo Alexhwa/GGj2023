@@ -122,6 +122,14 @@ MonoBehaviour:
   waitDuration: 0.3
   aimDuration: 3
   aimMoveSpeed: 0.6
+  mesh: {fileID: 7599777071899864849}
+  materials:
+  - {fileID: 2100000, guid: 6fb7b3243df82a34fb9f413d172b6289, type: 2}
+  - {fileID: 2100000, guid: 19812111672f82148b70723905d2fc13, type: 2}
+  - {fileID: 2100000, guid: 1721b9b9af2432748aa4d6219b283d61, type: 2}
+  - {fileID: 2100000, guid: 5b1404f3ef146564daa7e5ebaf91c7fa, type: 2}
+  - {fileID: 2100000, guid: 15afa5cd18f97c6459b5351318f17621, type: 2}
+  - {fileID: 2100000, guid: 384cd4f821474704d90811316d8ac0d0, type: 2}
 --- !u!135 &1279735378
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -207,5 +215,10 @@ PrefabInstance:
 --- !u!4 &5112092583382968319 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a4b43aaea2c9dd74682a35ad0a56ba93, type: 3}
+  m_PrefabInstance: {fileID: 4718493007006793748}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &7599777071899864849 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -6337513998179504379, guid: a4b43aaea2c9dd74682a35ad0a56ba93, type: 3}
   m_PrefabInstance: {fileID: 4718493007006793748}
   m_PrefabAsset: {fileID: 0}

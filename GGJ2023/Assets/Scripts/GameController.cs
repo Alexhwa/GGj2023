@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using DG.Tweening;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -78,16 +79,19 @@ public class GameController : MonoBehaviour
 
     public void RestartGame()
     {
+        Time.timeScale = 1f;
         GameManager.Instance.LoadLevel(currentLevel);
     }
     
     public void GoBackToTitle()
     {
+        Time.timeScale = 1f;
         GameManager.Instance.LoadTitle();
     }
     
     public void GoBackToLevelSelect()
     {
+        Time.timeScale = 1f;
         GameManager.Instance.LoadLevelSelect();
     }
     

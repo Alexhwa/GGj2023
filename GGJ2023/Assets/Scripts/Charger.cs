@@ -15,6 +15,8 @@ public class Charger : MonoBehaviour
 
     private float waitTimer;
 
+    public SkinnedMeshRenderer mesh;
+    public List<Material> materials;
     private GameColor.COLOR color;
     private Rigidbody m_rb;
 
@@ -61,6 +63,8 @@ public class Charger : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        color = GameColor.RandomColorExcluding(GameColor.COLOR.Purple);
+        mesh.material = materials[(int)color];
         m_rb = GetComponent<Rigidbody>();
         StartCoroutine(Wait());
     }

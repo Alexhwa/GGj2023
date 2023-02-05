@@ -13,6 +13,10 @@ public class ArmRope : MonoBehaviour
 
     [SerializeField] private Rigidbody m_rb;
     [SerializeField] private GameObject clawVFX;
+    [SerializeField] private float flashTimer;
+    [SerializeField] private Material normalMaterial;
+    [SerializeField] private MeshRenderer[] clawMeshRenderers;
+    [SerializeField] private Material[] clawColorMaterials;
     [SerializeField] public AudioSource extendSound;
     [SerializeField] public AudioSource contractSound;
     public float moveSpeed;
@@ -61,6 +65,7 @@ public class ArmRope : MonoBehaviour
             m_rb.isKinematic = true;
             PlaceRope(collision.gameObject.GetComponent<Wall>().color);
             clawVFX.SetActive(true);
+            StartCoroutine(FlashWhenGrabbing(clawColorMaterials[(int)collision.gameObject.GetComponent<Wall>().color]));
             _anim.SetBool("Closed", true);
         }
     }
@@ -71,6 +76,8 @@ public class ArmRope : MonoBehaviour
         WallLinkListener?.Invoke(color);
     }
     
+    //Gamecolor.COLOR
+    //red, yellow, green, blue, pink, purple
 
     private void FixedUpdate()
     {
@@ -96,6 +103,7 @@ public class ArmRope : MonoBehaviour
         _anim.SetBool("Closed", false);
         if(!mute)extendSound.Play();
     }
+
     public bool CanBeGrabbed()
     {
         return currentState == STATE.Set;
@@ -103,5 +111,20 @@ public class ArmRope : MonoBehaviour
     public void SetCanBeGrabbed(bool value)
     {
         currentState = (value) ? STATE.Set : STATE.Unset;
+    }
+    
+    private IEnumerator FlashWhenGrabbing(Material flashMaterial)
+    {
+        foreach (MeshRenderer i in clawMeshRenderers)
+        {
+            i.material = flashMaterial;
+        }
+
+        yield return new WaitForSeconds(flashTimer);
+
+        foreach (MeshRenderer i in clawMeshRenderers)
+        {
+            i.material = normalMaterial;
+        }
     }
 }

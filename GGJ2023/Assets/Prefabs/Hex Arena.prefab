@@ -59,6 +59,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyObject: {fileID: 5694643884137826296, guid: f2f5bab39a561034eb067b268207e414, type: 3}
+  chargerObject: {fileID: 2076431386949987988, guid: 1a3a4da57b4e33e4c8155eba9399d6c3, type: 3}
   walls:
   - {fileID: 2922552566189573288}
   - {fileID: 3557883070672608897}

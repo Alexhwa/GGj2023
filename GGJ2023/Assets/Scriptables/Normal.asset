@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Normal
   m_EditorClassIdentifier: 
   duration: 60
-  spawnInterval: 2.3
+  spawnInterval: 2.2
   spawnIntervalDeviation: 0.2
-  speedUpScale: 0.2
+  speedUpScale: 0.3
   patterns:
   - {fileID: 11400000, guid: 0967069687387e445ab0142b6823932b, type: 2}
   - {fileID: 11400000, guid: 5b692ec28a533ec47a2efc7c06aed08b, type: 2}

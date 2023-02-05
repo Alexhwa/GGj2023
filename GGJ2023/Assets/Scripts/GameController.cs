@@ -58,6 +58,8 @@ public class GameController : MonoBehaviour
 
     public void TakeDamage()
     {
+        player.playerVisuals.DoHurt();
+
         damageSource.Play();
         playerHealth -= 1;
         HealthChangedListener?.Invoke(playerHealth);

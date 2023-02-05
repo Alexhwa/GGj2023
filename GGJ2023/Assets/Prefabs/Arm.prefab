@@ -422,6 +422,20 @@ MonoBehaviour:
   selectionBox: {fileID: 222583996888901130}
   m_rb: {fileID: 4757040568990723103}
   clawVFX: {fileID: 8002304716707077061}
+  flashTimer: 0.1
+  normalMaterial: {fileID: 2100000, guid: 35105fdfad7e48a4ca9233316e202cec, type: 2}
+  flashMaterial: {fileID: 2100000, guid: fb01909eeb4bda0428369210fdde1893, type: 2}
+  clawMeshRenderers:
+  - {fileID: 5779533090929283257}
+  - {fileID: 4450576676828296218}
+  - {fileID: 200226042046464671}
+  clawColorMaterials:
+  - {fileID: 2100000, guid: f56333ec9ae70284ab937e633b69bdce, type: 2}
+  - {fileID: 2100000, guid: 82922df097aaafe4291f38cd294aaaf7, type: 2}
+  - {fileID: 2100000, guid: a730b5690c2440d45a334b0fbfb63dc6, type: 2}
+  - {fileID: 2100000, guid: a26d808a1e2ce344ba839aacb9cb897b, type: 2}
+  - {fileID: 2100000, guid: 2a86defeff5de234c8e4769496cc9ef3, type: 2}
+  - {fileID: 2100000, guid: 1e7d261e1874f2747813d4f73bdab881, type: 2}
   extendSound: {fileID: 8138935675717059070}
   contractSound: {fileID: 2278477397220267957}
   moveSpeed: 35

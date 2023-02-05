@@ -85,6 +85,7 @@ public class GameController : MonoBehaviour
         else
         {
             endAnimation.transform.GetChild(0).gameObject.SetActive(true);
+            GameManager.Instance.musicManager.PlayGameOver();
         }
         GameOverListener?.Invoke(win);
     }

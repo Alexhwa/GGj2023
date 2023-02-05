@@ -7,7 +7,7 @@ public class ClawAccordion : MonoBehaviour
     [SerializeField] private GameObject claw;
     [SerializeField] private GameObject extender;
 
-    private readonly float SCALE_VALUE = 2.965f;
+    private readonly float SCALE_VALUE = 2.965f * 2;
     private float distance;
 
     void Update()

@@ -38,7 +38,8 @@ public class Player : MonoBehaviour
             if (Physics.Raycast(_ray, out _hit, 100, raycastLayers))
             {
                 var armScript = _hit.collider.GetComponent<ArmRope>();
-                if (armScript.currentState == ArmRope.STATE.Set) {
+                if (armScript.CanBeGrabbed()) {
+                    armScript.SetCanBeGrabbed(false);
                     _grabbedArm = armScript;
                     bodyPhysics.DetachArm(_grabbedArm);
                     _grabbedArm.CurrentColor = GameColor.COLOR.None;
@@ -48,16 +49,25 @@ public class Player : MonoBehaviour
         }
         if (_grabbedArm != null)
         {
+            var followVector = _grabbedArm.transform.localPosition;
+            followVector.z = 0;
+            followVector.y = 6;
+            _grabbedArm.transform.localPosition = Vector3.Slerp(followVector, _grabbedArm.transform.localPosition, 0.35f);
+
             var mousePosition = Input.mousePosition;
             mousePosition.z = Camera.main.transform.position.z;
             var mouseToWorldPoint = -Camera.main.ScreenToWorldPoint(mousePosition);
 
             mousePosition = new Vector3(mouseToWorldPoint.x, mouseToWorldPoint.y, _grabbedArm.transform.position.z);
-            var vectorToMouse = mousePosition - transform.position;
-            _grabbedArm.transform.position = transform.position + vectorToMouse.normalized * grabbedArmFollowDistance;
+            var vectorToMouse = (mousePosition - transform.position);
+            vectorToMouse.z = 0;
+            vectorToMouse = vectorToMouse.normalized;
 
+            Transform armTransform = _grabbedArm.transform.parent.parent;
+            armTransform.up = Vector3.RotateTowards(armTransform.up, vectorToMouse, 0.6f, 0);
             if (Input.GetMouseButtonDown(0))
             {
+                armTransform.up = Vector3.RotateTowards(armTransform.up, vectorToMouse, 8f, 0);
                 _grabbedArm.Launch(vectorToMouse);
                 bodyPhysics.AttachArm(_grabbedArm);
                 _grabbedArm = null;

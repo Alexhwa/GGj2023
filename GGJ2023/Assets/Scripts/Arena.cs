@@ -54,7 +54,7 @@ public class Arena : MonoBehaviour
     }
     private void SpawnEnemies(int enemies)
     {
-        if(enemies > 0)
+        if(enemies >= 0)
         {
             for(int i = 0; i < enemies; i++)
             {

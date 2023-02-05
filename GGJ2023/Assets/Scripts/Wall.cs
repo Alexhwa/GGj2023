@@ -50,12 +50,3 @@ public class Wall : MonoBehaviour
     
 }
 
-[CustomEditor(typeof(Wall))]
-public class WallEditor : Editor
-{
-    public override void OnInspectorGUI()
-    {
-        base.OnInspectorGUI();
-        //TODO: Change the wall color here
-    }
-}

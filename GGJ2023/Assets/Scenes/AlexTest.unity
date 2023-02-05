@@ -1060,10 +1060,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Space Backdrop
       objectReference: {fileID: 0}
-    - target: {fileID: 150775264840035662, guid: a7649466d9209954aa7852a117b030d0, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7649466d9209954aa7852a117b030d0, type: 3}
 --- !u!4 &1569835440 stripped

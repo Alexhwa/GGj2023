@@ -18,12 +18,12 @@ public class ClawAccordion : MonoBehaviour
         LengthUpdate();
     }
 
-    void Update()
+    void LateUpdate()
     {
-        if (claw.transform.hasChanged || clawBase.transform.hasChanged)
-        {
+        //if (claw.transform.hasChanged || clawBase.transform.hasChanged)
+        //{
             LengthUpdate();
-        }
+        //}
     }
 
     private void LengthUpdate()

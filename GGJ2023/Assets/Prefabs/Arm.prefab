@@ -542,8 +542,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   claw: {fileID: 6144476442479810971}
-  clawBase: {fileID: 7564081864868329071}
-  extender: {fileID: 5816028904560297990}
+  clawBase: {fileID: 5816028904560297990}
+  extender: {fileID: 7564081864868329071}
 --- !u!1 &8424932036713482299
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,18 +7,19 @@ public class Enemy : MonoBehaviour
 {
     public GameColor.COLOR color = GameColor.COLOR.None;
 
-    [SerializeField] private MeshRenderer meshRenderer;
+    [SerializeField] private SpriteRenderer bodySprite;
+    [SerializeField] private ParticleSystem particleSystem;
     [SerializeField][Tooltip("percent traveled/s")] private float speed;
     
     [Range(0,100)]private float _percentTraveled;
-    private ArmRope _attachedArmRope;
+    [SerializeField] private ArmRope _attachedArmRope;
 
     private void Start()
     {
         _attachedArmRope = GameController.Instance.player.GetRandomRope();
-        meshRenderer.material = new Material(meshRenderer.material);
         color = GameColor.RandomColorExcluding(color);
-        meshRenderer.material.color = GameColor.GetColor(color);
+        bodySprite.color = GameColor.GetColor(color);
+        particleSystem.startColor = GameColor.GetColor(color);
         _attachedArmRope.WallLinkListener += TryKill;
     }
 
@@ -38,6 +39,7 @@ public class Enemy : MonoBehaviour
     {
         transform.position =
             Vector3.Lerp(_attachedArmRope.anchorPoint, _attachedArmRope.rootPoint, _percentTraveled / 100);
+        
         if (_percentTraveled >= 100)
         {
             GameController.Instance.player.OnEnemyContact();

@@ -17,6 +17,8 @@ public class GameController : MonoBehaviour
     [HideInInspector] public Player player;
     [HideInInspector] public Arena CurrentArena;
     public HashSet<GameColor.COLOR> CurrentColors = new HashSet<GameColor.COLOR>();
+
+    private int playerHealth; 
     
     public void SetUpGame(GameLevel level)
     {

@@ -11,6 +11,8 @@ public class Wall : MonoBehaviour
     [SerializeField] public GameColor.COLOR color;
 
     [SerializeField] private MeshRenderer meshRenderer;
+
+    [SerializeField] private List<Material> wallMaterials;
     //private List<ArmRope> _connectedRopes = new List<ArmRope>();
 
     private void Awake()
@@ -21,8 +23,7 @@ public class Wall : MonoBehaviour
     public void InitWall(GameColor.COLOR startColor, int ropes)
     {
         color = startColor;
-        meshRenderer.material = new Material(meshRenderer.material);
-        meshRenderer.material.color = GameColor.GetColor(color);
+        meshRenderer.material = wallMaterials[(int) color];
         for (int i = 0; i < ropes; i++)
         {
             GameController.Instance.player.AddArm(transform.position);

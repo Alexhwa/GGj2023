@@ -9,9 +9,12 @@ public static class GameColor
     {
         None = -1,
         Red = 0,
-        Blue = 1,
+        Yellow = 1,
         Green = 2,
-        Yellow = 3
+        Blue = 3,
+        Pink = 4,
+        Purple = 5
+        
     }
 
     private static Dictionary<COLOR, Color> ColorMap = new Dictionary<COLOR, Color>()

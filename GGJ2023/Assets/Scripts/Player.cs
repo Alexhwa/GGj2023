@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Animations;
 using Random = UnityEngine.Random;
 
 public class Player : MonoBehaviour
@@ -25,6 +26,11 @@ public class Player : MonoBehaviour
     {
         var arm = Instantiate(armObject,transform.parent);
         arm.transform.rotation = Quaternion.LookRotation(arm.transform.right, position);
+        var constraint = new ConstraintSource();
+        constraint.sourceTransform = bodyPhysics.transform;
+        constraint.weight = 1;
+        arm.GetComponentInChildren<ParentConstraint>().AddSource(constraint);
+        
         var armScript = arm.GetComponentInChildren<ArmRope>();
         armScript.currentState = ArmRope.STATE.Unset;
         bodyPhysics.AttachArm(armScript);

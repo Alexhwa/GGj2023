@@ -36,7 +36,7 @@ public class Player : MonoBehaviour
         var armScript = arm.GetComponentInChildren<ArmRope>();
         armScript.currentState = ArmRope.STATE.Unset;
         bodyPhysics.AttachArm(armScript);
-        armScript.Launch((position - transform.position).normalized, true);
+        armScript.Launch((position - transform.position).normalized);
         
     }
 

@@ -67,7 +67,7 @@ public class GameController : MonoBehaviour
         endAnimation.GetComponent<DOTweenAnimation>().DOPlay();
         if (win)
         {
-            print("Win");
+            endAnimation.transform.GetChild(1).gameObject.SetActive(true);
         }
         else
         {

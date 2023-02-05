@@ -18,6 +18,11 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    private void Start()
+    {
+        musicManager.PlayTitle();
+    }
+
     public void LoadLevel(GameLevel level)
     {
         StartCoroutine(LoadSequence("Game", level));
@@ -30,6 +35,7 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(scene);
         while (SceneManager.GetActiveScene().name != scene) yield return null;
         anim.Play("black-out");
+        musicManager.PlayMain();
         yield return new WaitForSeconds(.5f);
         GameController.Instance.SetUpGame(level, selectedDifficulty);
     }
@@ -52,10 +58,12 @@ public class GameManager : MonoBehaviour
     public void LoadTitle()
     {
         StartCoroutine(LoadSequence("Title"));
+        musicManager.PlayTitle();
     }
     public void LoadLevelSelect()
     {
         StartCoroutine(LoadSequence("Title"));
+        musicManager.PlayTitle();
     }
 
     private void LoadScene(string scene)

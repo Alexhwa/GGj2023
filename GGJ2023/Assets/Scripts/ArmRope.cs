@@ -20,6 +20,7 @@ public class ArmRope : MonoBehaviour
     [SerializeField] private Material[] clawColorMaterials;
     [SerializeField] public AudioSource extendSound;
     [SerializeField] public AudioSource contractSound;
+    [SerializeField] public AudioSource hitSound;
     public float moveSpeed;
 
     public enum STATE{Set,Unset}
@@ -57,10 +58,23 @@ public class ArmRope : MonoBehaviour
         contractSound.Play();
     }
 
+    private bool mute = true;
+    private void Start()
+    {
+        StartCoroutine(MuteWait());
+    }
+
+    private IEnumerator MuteWait()
+    {
+        yield return new WaitForSeconds(1);
+        mute = false;
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (currentState == STATE.Unset && collision.gameObject.tag.Equals("Wall"))
         {
+            if(!mute) hitSound.Play();
             currentState = STATE.Set;
             m_rb.velocity = Vector3.zero;
             m_rb.isKinematic = true;
@@ -103,7 +117,7 @@ public class ArmRope : MonoBehaviour
         //lineRenderer.SetPosition(1,anchorPoint);
     }
 
-    public void Launch(Vector3 direction, bool mute = false)
+    public void Launch(Vector3 direction)
     {
         m_rb.isKinematic = false;
         m_rb.velocity = direction * moveSpeed;

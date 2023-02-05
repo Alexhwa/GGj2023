@@ -7,6 +7,12 @@ public class Arena : MonoBehaviour
 {
     [SerializeField] private GameObject enemyObject;
     [SerializeField] private List<Wall> walls;
+    [SerializeField] private EnemySpawner spawner;
+    private void Start()
+    {
+        spawner.onSpawn.AddListener(x => print(x));
+        spawner.StartSpawning();
+    }
 
     public void InitArena(GameLevel level)
     {

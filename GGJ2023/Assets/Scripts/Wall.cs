@@ -15,11 +15,15 @@ public class Wall : MonoBehaviour
     [SerializeField] private List<Material> wallMaterials;
     //private List<ArmRope> _connectedRopes = new List<ArmRope>();
 
+
     private void Awake()
     {
         
     }
 
+    private void Start()
+    {
+    }
     public void InitWall(GameColor.COLOR startColor, int ropes)
     {
         color = startColor;

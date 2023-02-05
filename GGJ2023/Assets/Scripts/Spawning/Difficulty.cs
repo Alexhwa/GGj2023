@@ -12,5 +12,5 @@ public class Difficulty : ScriptableObject
     [Tooltip("The multiplier applied to the time scale of spawning as the round timer continues. At the end of the round, the spawn interals should be spawnInterval / speedUpScale")]
     public float speedUpScale;
     public List<SpawnPattern> patterns;
-
+    public GameObject arena;
 }

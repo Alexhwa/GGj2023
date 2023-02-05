@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     private static GameManager _instance;
     public static GameManager Instance => _instance ? _instance : _instance = FindObjectOfType<GameManager>();
     public MusicManager musicManager;
+
+    public Difficulty selectedDifficulty;
     
     private void Awake()
     {
@@ -29,7 +31,7 @@ public class GameManager : MonoBehaviour
         while (SceneManager.GetActiveScene().name != scene) yield return null;
         anim.Play("black-out");
         yield return new WaitForSeconds(.5f);
-        GameController.Instance.SetUpGame(level);
+        GameController.Instance.SetUpGame(level, selectedDifficulty);
     }
 
     public void LoseLevel()
@@ -74,4 +76,8 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(.5f);
     }
     
+    public void SetDifficulty(Difficulty difficulty)
+    {
+        selectedDifficulty = difficulty;
+    }
 }

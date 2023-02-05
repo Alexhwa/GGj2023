@@ -6,6 +6,8 @@ using UnityEngine.XR;
 public class Arena : MonoBehaviour
 {
     [SerializeField] private GameObject enemyObject;
+    [SerializeField] private GameObject chargerObject;
+    [SerializeField] private Transform[] chargerSpawnPoints;
     [SerializeField] private List<Wall> walls;
     [SerializeField] private EnemySpawner spawner;
     private void Start()
@@ -57,6 +59,8 @@ public class Arena : MonoBehaviour
         else
         {
             //Spawn charger
+            var charger = Instantiate(chargerObject, transform);
+            charger.transform.position = chargerSpawnPoints[Random.Range(0, chargerSpawnPoints.Length)].position;
         }
     }
 }

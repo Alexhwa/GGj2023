@@ -43,7 +43,7 @@ public class Charger : MonoBehaviour
     {
         if (collision.gameObject.tag.Equals("Wall"))
         {
-            if (gameObject.GetComponent<Wall>().color == color) Kill();
+            if (collision.gameObject.GetComponent<Wall>().color == color) Kill();
             else
             {
                 m_rb.velocity = Vector3.zero;

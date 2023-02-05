@@ -6,7 +6,7 @@ Texture2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: z__GradientRampTex{"mode":0,"colorKeys":[{"color":{"r":0.8113207817077637,"g":0.7747617959976196,"b":0.47837311029434206,"a":1.0},"time":0.07647822052240372},{"color":{"r":1.0,"g":0.0,"b":0.0,"a":1.0},"time":0.7911803126335144}],"alphaKeys":[{"alpha":1.0,"time":0.0},{"alpha":1.0,"time":1.0}]}
+  m_Name: z__GradientRampTex{"mode":0,"colorKeys":[{"color":{"r":0.10008513927459717,"g":1.0,"b":0.0,"a":1.0},"time":0.0},{"color":{"r":1.0,"g":1.0,"b":1.0,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":1.0,"time":0.0},{"alpha":1.0,"time":0.16765087842941285},{"alpha":1.0,"time":1.0}]}
   m_ImageContentsHash:
     serializedVersion: 2
     Hash: 00000000000000000000000000000000
@@ -41,7 +41,7 @@ Texture2D:
   m_ColorSpace: 1
   m_PlatformBlob: 
   image data: 1024
-  _typelessdata: ffcfc67affcfc67affcfc67affcfc67affcfc67affcfc67affcfc67affcfc67affcfc67affcfc67affcfc67affcfc67affcfc67affcfc67affcfc67affcfc67affcfc67affcfc67affcfc67affcfc67affcfc57affcfc479ffd0c378ffd0c278ffd0c177ffd0c076ffd1bf76ffd1bd75ffd1bc74ffd1bb74ffd2ba73ffd2b972ffd2b872ffd2b771ffd3b670ffd3b570ffd3b46fffd4b36effd4b26effd4b06dffd4af6cffd5ae6cffd5ad6bffd5ac6affd5ab6affd6aa69ffd6a968ffd6a868ffd6a767ffd7a666ffd7a566ffd7a365ffd7a264ffd8a164ffd8a063ffd89f62ffd99e62ffd99d61ffd99c60ffd99b60ffda9a5fffda995effda975effda965dffdb955cffdb945cffdb935bffdb925affdc915affdc9059ffdc8f58ffdc8e58ffdd8d57ffdd8c56ffdd8a56ffde8955ffde8854ffde8753ffde8653ffdf8552ffdf8451ffdf8351ffdf8250ffe0814fffe0804fffe07f4effe07d4dffe17c4dffe17b4cffe17a4bffe1794bffe2784affe27749ffe27649ffe37548ffe37447ffe37347ffe37246ffe47045ffe46f45ffe46e44ffe46d43ffe56c43ffe56b42ffe56a41ffe56941ffe66840ffe6673fffe6663fffe7653effe7633dffe7623dffe7613cffe8603bffe85f3bffe85e3affe85d39ffe95c39ffe95b38ffe95a37ffe95937ffea5836ffea5635ffea5535ffea5434ffeb5333ffeb5233ffeb5132ffec5031ffec4f31ffec4e30ffec4d2fffed4c2fffed4b2effed492dffed482dffee472cffee462bffee452bffee442affef4329ffef4229ffef4128ffef4027fff03f27fff03e26fff03c25fff13b25fff13a24fff13923fff13823fff23722fff23621fff23521fff23420fff3331ffff3321ffff3311efff32f1dfff42e1dfff42d1cfff42c1bfff52b1bfff52a1afff52919fff52819fff62718fff62617fff62517fff62416fff72215fff72115fff72014fff71f13fff81e13fff81d12fff81c11fff81b11fff91a10fff9190ffff9180ffffa160efffa150dfffa140dfffa130cfffb120bfffb110bfffb100afffb0f09fffc0e09fffc0d08fffc0c07fffc0b07fffd0906fffd0805fffd0705fffd0604fffe0503fffe0403fffe0302ffff0201ffff0101ffff0000ffff0000ffff0000ffff0000ffff0000ffff0000ffff0000ffff0000ffff0000ffff0000ffff0000ffff0000ffff0000ffff0000ffff0000ffff0000ffff0000ffff0000ffff0000ffff0000ffff0000ffff0000ffff0000ffff0000ffff0000ffff0000ffff0000ffff0000ffff0000ffff0000ffff0000ffff0000ffff0000ffff0000ffff0000ffff0000ffff0000ffff0000ffff0000ffff0000ffff0000ffff0000ffff0000ffff0000ffff0000ffff0000ffff0000ffff0000ffff0000ffff0000ffff0000ffff0000ffff0000ffff0000
+  _typelessdata: ff1aff00ff1aff01ff1bff02ff1cff03ff1dff04ff1eff05ff1fff06ff20ff07ff21ff08ff22ff09ff23ff0aff23ff0bff24ff0cff25ff0dff26ff0eff27ff0fff28ff10ff29ff11ff2aff12ff2bff13ff2cff14ff2cff15ff2dff16ff2eff17ff2fff18ff30ff19ff31ff1aff32ff1bff33ff1cff34ff1dff35ff1eff35ff1fff36ff20ff37ff21ff38ff22ff39ff23ff3aff24ff3bff25ff3cff26ff3dff27ff3eff28ff3eff29ff3fff2aff40ff2bff41ff2cff42ff2dff43ff2eff44ff2fff45ff30ff46ff31ff47ff32ff47ff33ff48ff34ff49ff35ff4aff36ff4bff37ff4cff38ff4dff39ff4eff3aff4fff3bff50ff3cff50ff3dff51ff3eff52ff3fff53ff40ff54ff41ff55ff42ff56ff43ff57ff44ff58ff45ff59ff46ff59ff47ff5aff48ff5bff49ff5cff4aff5dff4bff5eff4cff5fff4dff60ff4eff61ff4fff62ff50ff62ff51ff63ff52ff64ff53ff65ff54ff66ff55ff67ff56ff68ff57ff69ff58ff6aff59ff6bff5aff6bff5bff6cff5cff6dff5dff6eff5eff6fff5fff70ff60ff71ff61ff72ff62ff73ff63ff74ff64ff74ff65ff75ff66ff76ff67ff77ff68ff78ff69ff79ff6aff7aff6bff7bff6cff7cff6dff7dff6eff7dff6fff7eff70ff7fff71ff80ff72ff81ff73ff82ff74ff83ff75ff84ff76ff85ff77ff86ff78ff86ff79ff87ff7aff88ff7bff89ff7cff8aff7dff8bff7eff8cff7fff8dff80ff8eff81ff8fff82ff8fff83ff90ff84ff91ff85ff92ff86ff93ff87ff94ff88ff95ff89ff96ff8aff97ff8bff98ff8cff98ff8dff99ff8eff9aff8fff9bff90ff9cff91ff9dff92ff9eff93ff9fff94ffa0ff95ffa1ff96ffa1ff97ffa2ff98ffa3ff99ffa4ff9affa5ff9bffa6ff9cffa7ff9dffa8ff9effa9ff9fffaaffa0ffaaffa1ffabffa2ffacffa3ffadffa4ffaeffa5ffafffa6ffb0ffa7ffb1ffa8ffb2ffa9ffb3ffaaffb3ffabffb4ffacffb5ffadffb6ffaeffb7ffafffb8ffb0ffb9ffb1ffbaffb2ffbbffb3ffbcffb4ffbcffb5ffbdffb6ffbeffb7ffbfffb8ffc0ffb9ffc1ffbaffc2ffbbffc3ffbcffc4ffbdffc5ffbeffc5ffbfffc6ffc0ffc7ffc1ffc8ffc2ffc9ffc3ffcaffc4ffcbffc5ffccffc6ffcdffc7ffceffc8ffceffc9ffcfffcaffd0ffcbffd1ffccffd2ffcdffd3ffceffd4ffcfffd5ffd0ffd6ffd1ffd7ffd2ffd7ffd3ffd8ffd4ffd9ffd5ffdaffd6ffdbffd7ffdcffd8ffddffd9ffdeffdaffdfffdbffe0ffdcffe0ffddffe1ffdeffe2ffdfffe3ffe0ffe4ffe1ffe5ffe2ffe6ffe3ffe7ffe4ffe8ffe5ffe9ffe6ffe9ffe7ffeaffe8ffebffe9ffecffeaffedffebffeeffecffefffedfff0ffeefff1ffeffff2fff0fff2fff1fff3fff2fff4fff3fff5fff4fff6fff5fff7fff6fff8fff7fff9fff8fffafff9fffbfffafffbfffbfffcfffcfffdfffdfffefffeffffffff
   m_StreamData:
     serializedVersion: 2
     offset: 0
@@ -54,7 +54,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: GameWall_MAT
+  m_Name: GameWallGreen_MAT
   m_Shader: {fileID: 4800000, guid: 2a230514c860643f69b6a4d1871d3825, type: 3}
   m_ValidKeywords:
   - DR_OUTLINE_ON
@@ -200,9 +200,9 @@ Material:
     - _DetailMapColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FlatRimColor: {r: 0.85023, g: 0.85034, b: 0.85045, a: 0.85056}
-    - _FlatSpecularColor: {r: 0.37807465, g: 0, b: 1, a: 1}
+    - _FlatSpecularColor: {r: 0.013365926, g: 0.21698111, b: 0, a: 1}
     - _LightAttenuation: {r: 0, g: 1, b: 0, a: 0}
     - _LightmapDirection: {r: 0, g: 1, b: 0, a: 0}
-    - _OutlineColor: {r: 0.48627454, g: 0.7686275, b: 0.8078432, a: 1}
+    - _OutlineColor: {r: 0, g: 0.6792453, b: 0.11178379, a: 1}
     - _ShadowColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []

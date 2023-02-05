@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicManager: {fileID: 0}
+  selectedDifficulty: {fileID: 0}
   anim: {fileID: 7719752382014143113}
 --- !u!1 &3119221776593584489
 GameObject:
@@ -94,7 +95,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicSource: {fileID: 8079892852887019939}
-  title: {fileID: 0}
+  title: {fileID: 8300000, guid: 87855122c00205e448598fed639119fc, type: 3}
   main: {fileID: 8300000, guid: 07ef3c77b41a8d1458ce9bf6aee69ca8, type: 3}
   gameOver: {fileID: 8300000, guid: c51e23799be1dde45a9d2028bbb0454b, type: 3}
 --- !u!82 &8079892852887019939
@@ -111,7 +112,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

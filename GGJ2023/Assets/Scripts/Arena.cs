@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.XR;
 
 public class Arena : MonoBehaviour
@@ -10,8 +11,11 @@ public class Arena : MonoBehaviour
     [SerializeField] private Transform[] chargerSpawnPoints;
     [SerializeField] private List<Wall> walls;
     [SerializeField] private EnemySpawner spawner;
+
+    private Text timerText;
     private void Start()
     {
+        timerText = GameObject.FindGameObjectWithTag("Timer").GetComponent<Text>();
         spawner.onSpawn.AddListener(x => SpawnEnemies(x));
         spawner.StartSpawning();
     }
@@ -49,7 +53,7 @@ public class Arena : MonoBehaviour
     }
     private void SpawnEnemies(int enemies)
     {
-        if(enemies > 0)
+        if(enemies >= 0)
         {
             for(int i = 0; i < enemies; i++)
             {
@@ -62,5 +66,9 @@ public class Arena : MonoBehaviour
             var charger = Instantiate(chargerObject, transform);
             charger.transform.position = chargerSpawnPoints[Random.Range(0, chargerSpawnPoints.Length)].position;
         }
+    }
+    private void Update()
+    {
+        timerText.text = spawner.GetTimerTime();
     }
 }

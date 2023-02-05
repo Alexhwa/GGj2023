@@ -74,4 +74,9 @@ public class EnemySpawner : MonoBehaviour
             currentPatternIndex = 0;
         }
     }
+
+    public string GetTimerTime()
+    {
+        return ((int)(currentDiffculty.duration - elapsedTime)).ToString();
+    }
 }

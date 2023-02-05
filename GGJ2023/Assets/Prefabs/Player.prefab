@@ -246,7 +246,7 @@ MonoBehaviour:
   raycastLayers:
     serializedVersion: 2
     m_Bits: 136
-  grabbedArmFollowDistance: 6
+  grabbedArmFollowDistance: 3
   retractSpeed: 10
 --- !u!1 &2025500049101501928
 GameObject:

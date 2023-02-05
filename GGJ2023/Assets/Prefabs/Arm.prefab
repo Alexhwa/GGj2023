@@ -426,6 +426,7 @@ MonoBehaviour:
   currentState: 0
   rootPoint: {x: 0, y: 0, z: 0}
   anchorPoint: {x: 0, y: 0, z: 0}
+  _anim: {fileID: 1342234430698928254}
 --- !u!136 &222583996888901130
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -437,9 +438,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.013
-  m_Height: 0.04
+  m_Height: 0.05
   m_Direction: 2
-  m_Center: {x: 0, y: 0, z: -0.01}
+  m_Center: {x: 0, y: 0, z: -0.002}
 --- !u!1 &6326150282498019874
 GameObject:
   m_ObjectHideFlags: 0
@@ -449,6 +450,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6326150282498019884}
+  - component: {fileID: 1342234430698928254}
   m_Layer: 3
   m_Name: Arm
   m_TagString: Untagged
@@ -472,6 +474,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!95 &1342234430698928254
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6326150282498019874}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 633a52727f6c14e4a9f9168a87c8c596, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &7564081864868329071
 GameObject:
   m_ObjectHideFlags: 0

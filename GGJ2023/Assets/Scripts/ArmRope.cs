@@ -32,6 +32,8 @@ public class ArmRope : MonoBehaviour
         }
     }
 
+    public Animator _anim;
+
     public event Action<GameColor.COLOR> WallLinkListener;
     private void Start()
     {
@@ -57,6 +59,7 @@ public class ArmRope : MonoBehaviour
             m_rb.velocity = Vector3.zero;
             m_rb.isKinematic = true;
             PlaceRope(collision.gameObject.GetComponent<Wall>().color);
+            _anim.SetBool("Closed", true);
         }
     }
 
@@ -88,6 +91,7 @@ public class ArmRope : MonoBehaviour
         m_rb.isKinematic = false;
         m_rb.velocity = direction * moveSpeed;
         currentState = STATE.Unset;
+        _anim.SetBool("Closed", false);
     }
     public bool CanBeGrabbed()
     {

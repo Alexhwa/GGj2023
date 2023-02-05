@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
     private ArmRope _grabbedArm;
 
     public float grabbedArmFollowDistance;
+    public float retractSpeed;
 
     public void AddArm(Vector3 position)
     {
@@ -49,10 +50,9 @@ public class Player : MonoBehaviour
         }
         if (_grabbedArm != null)
         {
-            var followVector = _grabbedArm.transform.localPosition;
-            followVector.z = 0;
-            followVector.y = 6;
-            _grabbedArm.transform.localPosition = Vector3.Slerp(followVector, _grabbedArm.transform.localPosition, 0.35f);
+            var followVector = new Vector3(0, grabbedArmFollowDistance, 0);
+            
+            _grabbedArm.transform.localPosition = Vector3.Slerp(followVector, _grabbedArm.transform.localPosition, 1 - Time.deltaTime * retractSpeed);
 
             var mousePosition = Input.mousePosition;
             mousePosition.z = Camera.main.transform.position.z;
@@ -65,6 +65,8 @@ public class Player : MonoBehaviour
 
             Transform armTransform = _grabbedArm.transform.parent.parent;
             armTransform.up = Vector3.RotateTowards(armTransform.up, vectorToMouse, 0.6f, 0);
+            armTransform.localPosition = transform.localPosition;
+
             if (Input.GetMouseButtonDown(0))
             {
                 armTransform.up = Vector3.RotateTowards(armTransform.up, vectorToMouse, 8f, 0);

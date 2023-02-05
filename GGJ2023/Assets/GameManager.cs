@@ -79,7 +79,7 @@ public class GameManager : MonoBehaviour
         //anim.Play("black-in");
         yield return new WaitForSeconds(.5f);
         SceneManager.LoadScene(scene);
-        while (SceneManager.GetActiveScene().name != scene) yield return null;
+        //while (SceneManager.GetActiveScene().name != scene) yield return null;
         anim.Play("black-out");
         yield return new WaitForSeconds(.5f);
     }

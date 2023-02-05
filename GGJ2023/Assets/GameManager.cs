@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    private static GameManager _instance;
+    public static GameManager Instance => _instance ? _instance : _instance = FindObjectOfType<GameManager>();
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
@@ -34,6 +36,15 @@ public class GameManager : MonoBehaviour
     }
 
     public void PauseGame(bool pause)
+    {
+        
+    }
+
+    public void LoadTitle()
+    {
+        
+    }
+    public void LoadLevelSelect()
     {
         
     }

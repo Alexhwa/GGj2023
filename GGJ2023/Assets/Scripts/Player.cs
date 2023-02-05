@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
     [SerializeField] private Collider hitbox;
 
     [SerializeField] private BodyPhysics bodyPhysics;
-    [SerializeField] private PlayerVisuals playerVisuals;
+    [SerializeField] public PlayerVisuals playerVisuals;
 
     [Header("Selection")]
     private Ray _ray;
@@ -97,7 +97,6 @@ public class Player : MonoBehaviour
     public void OnEnemyContact()
     {
         GameController.Instance.TakeDamage();
-        playerVisuals.DoHurt();
         hurtVFX.SetActive(true);
         //TODO: Damage animation
     }

@@ -59,8 +59,7 @@ public class GameController : MonoBehaviour
     private bool IFrame = false;
     public void TakeDamage()
     {
-        //if (IFrame) return;
-        //IFrame = true;
+        player.playerVisuals.DoHurt();
         damageSource.Play();
         playerHealth -= 1;
         HealthChangedListener?.Invoke(playerHealth);

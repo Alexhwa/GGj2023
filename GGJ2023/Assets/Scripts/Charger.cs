@@ -17,6 +17,8 @@ public class Charger : MonoBehaviour
 
     public SkinnedMeshRenderer mesh;
     public List<Material> materials;
+
+    public Animator anim;
     private GameColor.COLOR color;
     private Rigidbody m_rb;
 
@@ -46,6 +48,7 @@ public class Charger : MonoBehaviour
     {
         if (collision.gameObject.tag.Equals("Wall"))
         {
+            anim.SetBool("Charging", false);
             if (collision.gameObject.GetComponent<Wall>().color == color) Kill();
             else
             {
@@ -109,6 +112,8 @@ public class Charger : MonoBehaviour
 
     private IEnumerator Charge()
     {
+        anim.SetBool("Charging", true);
+
         currentState = MoveState.Charge;
         m_rb.isKinematic = false;
 

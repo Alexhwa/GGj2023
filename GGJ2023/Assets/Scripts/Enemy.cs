@@ -22,6 +22,9 @@ public class Enemy : MonoBehaviour
         bodySprite.color = GameColor.GetColor(color);
         particleSystem.startColor = GameColor.GetColor(color);
         _attachedArmRope.WallLinkListener += TryKill;
+
+        transform.position =
+            Vector3.Lerp(_attachedArmRope.anchorPoint, _attachedArmRope.rootPoint, 0 / 100);
     }
 
     private void TryKill(GameColor.COLOR c)

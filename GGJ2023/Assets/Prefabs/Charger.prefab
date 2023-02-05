@@ -130,6 +130,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 5b1404f3ef146564daa7e5ebaf91c7fa, type: 2}
   - {fileID: 2100000, guid: 15afa5cd18f97c6459b5351318f17621, type: 2}
   - {fileID: 2100000, guid: 384cd4f821474704d90811316d8ac0d0, type: 2}
+  anim: {fileID: 6987222111917773755}
 --- !u!135 &1279735378
 SphereCollider:
   m_ObjectHideFlags: 0

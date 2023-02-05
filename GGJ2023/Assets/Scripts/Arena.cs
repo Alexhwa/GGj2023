@@ -16,7 +16,7 @@ public class Arena : MonoBehaviour
     private void Start()
     {
         timerText = GameObject.FindGameObjectWithTag("Timer").GetComponent<Text>();
-        spawner.onSpawn.AddListener(x => SpawnEnemies(x));
+        spawner.onSpawn.AddListener(x => StartCoroutine(SpawnEnemies(x)));
         spawner.onFinishedSpawn.AddListener(() => GameController.Instance.StopGame(true));
         spawner.StartSpawning();
     }
@@ -52,13 +52,14 @@ public class Arena : MonoBehaviour
         }
         //TODO: End Game
     }
-    private void SpawnEnemies(int enemies)
+    private IEnumerator SpawnEnemies(int enemies)
     {
         if(enemies >= 0)
         {
             for(int i = 0; i < enemies; i++)
             {
                 Instantiate(enemyObject, transform);
+                yield return new WaitForSeconds(0.1f);
             }
         }
         else
@@ -66,6 +67,7 @@ public class Arena : MonoBehaviour
             //Spawn charger
             var charger = Instantiate(chargerObject, transform);
             charger.transform.position = chargerSpawnPoints[Random.Range(0, chargerSpawnPoints.Length)].position;
+            yield return null;
         }
     }
     private void Update()

@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc290726797145e42aa4970233e9b57f, type: 3}
   m_Name: 2 OOOOOO
   m_EditorClassIdentifier: 
-  spawnObjects: 000000000000000000000000ffffffff
+  spawnObjects: 010000000100000000000000ffffffff

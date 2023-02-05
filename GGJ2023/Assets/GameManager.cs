@@ -74,13 +74,13 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Animator anim;
     private IEnumerator LoadSequence(string scene)
     {
-        anim.Play("black-in");
+        //anim.Play("black-in");
         yield return new WaitForSeconds(.5f);
         var s = SceneManager.LoadSceneAsync(scene);
         s.allowSceneActivation = false;
         while (!s.isDone) yield return null;
         s.allowSceneActivation = true;
-        anim.Play("black-out");
+        //anim.Play("black-out");
         yield return new WaitForSeconds(.5f);
     }
     

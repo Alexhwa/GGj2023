@@ -11,6 +11,8 @@ public class GameController : MonoBehaviour
     private static GameController _instance;
     public static GameController Instance => _instance ? _instance : _instance = FindObjectOfType<GameController>();
 
+
+    [SerializeField] private AudioSource damageSource;
     [SerializeField] private DOTweenAnimation startAnimation;
     [SerializeField] private GameObject endAnimation;
     [SerializeField] private GameObject playerObject;
@@ -56,6 +58,7 @@ public class GameController : MonoBehaviour
 
     public void TakeDamage()
     {
+        damageSource.Play();
         playerHealth -= 1;
         HealthChangedListener?.Invoke(playerHealth);
         if(playerHealth <= 0) StopGame(false);

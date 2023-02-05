@@ -5086,4 +5086,5 @@ MonoBehaviour:
   color: 0
   bodySprite: {fileID: 6248184508560155928}
   particleSystem: {fileID: 6834599941272024547}
-  speed: 20
+  speed: 10
+  _attachedArmRope: {fileID: 0}

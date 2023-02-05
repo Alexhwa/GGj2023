@@ -11,14 +11,20 @@ public class GameController : MonoBehaviour
     public static GameController Instance => _instance ? _instance : _instance = FindObjectOfType<GameController>();
 
     [SerializeField] private DOTweenAnimation startAnimation;
+    [SerializeField] private GameObject endAnimation;
     [SerializeField] private GameObject playerObject;
     [SerializeField] private GameObject fourSidedWalls;
 
     [HideInInspector] public Player player;
     [HideInInspector] public Arena CurrentArena;
+    
     public HashSet<GameColor.COLOR> CurrentColors = new HashSet<GameColor.COLOR>();
 
-    private int playerHealth; 
+    public event Action<int> HealthChangedListener;
+    public event Action<bool> GameOverListener;
+    public const int maxHealth = 3;
+    private int playerHealth;
+    private GameLevel currentLevel;
     
     public void SetUpGame(GameLevel level)
     {
@@ -35,7 +41,10 @@ public class GameController : MonoBehaviour
                 break;
         }
         player = Instantiate(playerObject, Vector3.zero, Quaternion.identity).GetComponentInChildren<Player>();
+        playerHealth = maxHealth;
+        HealthChangedListener?.Invoke(maxHealth);
         CurrentArena = FindObjectOfType<Arena>();
+        currentLevel = level;
         CurrentArena.InitArena(level);
         StartCoroutine(StartGame(level));
     }
@@ -54,5 +63,42 @@ public class GameController : MonoBehaviour
         CurrentColors.Clear();
     }
 
+    public void TakeDamage()
+    {
+        playerHealth -= 1;
+        HealthChangedListener?.Invoke(playerHealth);
+        if(playerHealth <= 0) StopGame(false);
+    }
+
+    private void StopGame(bool win)
+    {
+        Time.timeScale = 0;
+        endAnimation.SetActive(true);
+        endAnimation.GetComponent<DOTweenAnimation>().DOPlay();
+        if (win)
+        {
+            
+        }
+        else
+        {
+            endAnimation.transform.GetChild(0).gameObject.SetActive(true);
+        }
+        GameOverListener?.Invoke(win);
+    }
+
+    public void RestartGame()
+    {
+        GameManager.Instance.LoadLevel(currentLevel);
+    }
+    
+    public void GoBackToTitle()
+    {
+        GameManager.Instance.LoadTitle();
+    }
+    
+    public void GoBackToLevelSelect()
+    {
+        GameManager.Instance.LoadLevelSelect();
+    }
     
 }

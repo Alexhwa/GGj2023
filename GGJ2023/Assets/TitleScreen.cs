@@ -5,9 +5,5 @@ using UnityEngine.SceneManagement;
 
 public class TitleScreen : MonoBehaviour
 {
-    private void LoadLevel(GameLevel level)
-    {
-        SceneManager.LoadScene("Game");
-        
-    }
+
 }

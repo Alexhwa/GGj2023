@@ -15,6 +15,7 @@ public class ArmRope : MonoBehaviour
     [SerializeField] private GameObject clawVFX;
     [SerializeField] private float flashTimer;
     [SerializeField] private Material normalMaterial;
+    [SerializeField] private Material flashMaterial;
     [SerializeField] private MeshRenderer[] clawMeshRenderers;
     [SerializeField] private Material[] clawColorMaterials;
     [SerializeField] public AudioSource extendSound;
@@ -65,7 +66,14 @@ public class ArmRope : MonoBehaviour
             m_rb.isKinematic = true;
             PlaceRope(collision.gameObject.GetComponent<Wall>().color);
             clawVFX.SetActive(true);
-            StartCoroutine(FlashWhenGrabbing(clawColorMaterials[(int)collision.gameObject.GetComponent<Wall>().color]));
+            if((int)collision.gameObject.GetComponent<Wall>().color > 0)
+            {
+                StartCoroutine(FlashWhenGrabbing(clawColorMaterials[(int)collision.gameObject.GetComponent<Wall>().color]));
+            }else
+            {
+                StartCoroutine(FlashWhenGrabbing(flashMaterial));
+            }
+            
             _anim.SetBool("Closed", true);
         }
     }

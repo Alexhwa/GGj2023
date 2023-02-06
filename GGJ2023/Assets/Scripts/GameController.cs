@@ -13,6 +13,7 @@ public class GameController : MonoBehaviour
 
 
     [SerializeField] private AudioSource damageSource;
+    [SerializeField] private AudioSource winSource;
     [SerializeField] private DOTweenAnimation startAnimation;
     [SerializeField] private GameObject endAnimation;
     [SerializeField] private GameObject playerObject;
@@ -84,6 +85,8 @@ public class GameController : MonoBehaviour
         if (win)
         {
             endAnimation.transform.GetChild(1).gameObject.SetActive(true);
+            winSource.Play();
+            GameManager.Instance.musicManager.StopMusic();
         }
         else
         {

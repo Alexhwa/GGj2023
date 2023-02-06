@@ -28,9 +28,12 @@ public class GameController : MonoBehaviour
     public const int maxHealth = 3;
     private int playerHealth;
     private GameLevel currentLevel;
+
+    private bool endSelectionPressed;
     
     public void SetUpGame(GameLevel level, Difficulty difficulty)
     {
+        endSelectionPressed = false;
         Instantiate(difficulty.arena, Vector3.zero, Quaternion.identity);
         player = Instantiate(playerObject, Vector3.zero, Quaternion.identity).GetComponentInChildren<Player>();
         playerHealth = maxHealth;
@@ -92,20 +95,31 @@ public class GameController : MonoBehaviour
 
     public void RestartGame()
     {
-        Time.timeScale = 1f;
-        GameManager.Instance.LoadLevel(currentLevel);
+        if (!endSelectionPressed)
+        {
+            Time.timeScale = 1f;
+            GameManager.Instance.LoadLevel(currentLevel);
+            endSelectionPressed = true;
+        }
     }
     
     public void GoBackToTitle()
     {
-        Time.timeScale = 1f;
-        GameManager.Instance.LoadTitle();
+        if (!endSelectionPressed)
+        {
+            Time.timeScale = 1f;
+            GameManager.Instance.LoadTitle();
+            endSelectionPressed = true;
+        }
     }
     
     public void GoBackToLevelSelect()
     {
-        Time.timeScale = 1f;
+        if (!endSelectionPressed)
+        {
+            Time.timeScale = 1f;
         GameManager.Instance.LoadLevelSelect();
+            endSelectionPressed = true;
+        }
     }
-    
 }
